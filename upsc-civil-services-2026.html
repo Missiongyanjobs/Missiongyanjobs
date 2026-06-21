@@ -29,8 +29,8 @@
         th { background: #f8f9fa; font-weight: 600; color: #b30000; }
         tr:hover { background: #f8f9fa; }
         .highlight { color: #b30000; font-weight: 600; }
-        .btn-group { padding: 20px; text-align: center; background: #f8f9fa; }
-        .btn { display: inline-block; padding: 12px 25px; margin: 8px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+        .btn-group { padding: 20px; text-align: center; background: #f8f9fa; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
         .btn-primary { background: #d32f2f; color: white; }
         .btn-success { background: #388e3c; color: white; }
         .btn-info { background: #1976d2; color: white; }
@@ -41,7 +41,7 @@
             .container { margin: 10px; border-radius: 0; }
             .top-bar h1 { font-size: 20px; }
             th, td { padding: 8px; font-size: 14px; }
-            .btn { display: block; margin: 10px auto; }
+            .btn { width: 90%; margin: 5px auto; }
         }
     </style>
 </head>
@@ -131,13 +131,13 @@
 
         <div class="btn-group">
             <a href="https://upsconline.nic.in" class="btn btn-primary" target="_blank">Apply Mains Online</a>
-            <a href="#" class="btn btn-success">Download Pre Result</a>
-            <a href="#" class="btn btn-info">Download Notification PDF</a>
+            <a href="https://upsc.gov.in/examinations/results" class="btn btn-success" target="_blank">Download Pre Result</a>
+            <a href="https://doc.sarkariresults.org.in/hindi_notification-compressed.pdf" class="btn btn-info" target="_blank">Download Notification PDF</a>
             <a href="https://upsc.gov.in" class="btn btn-primary" target="_blank">Official Website</a>
         </div>
 
         <div class="footer-note">
-            Mission Gyan Jobs | Last Updated: 19 June 2026 | For Educational Purpose Only
+            Mission Gyan Jobs | Last Updated: 21 June 2026 | For Educational Purpose Only
         </div>
     </div>
 </body>
