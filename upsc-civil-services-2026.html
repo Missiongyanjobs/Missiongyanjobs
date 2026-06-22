@@ -29,13 +29,17 @@
         tr:hover { background: #f8f9fa; }
         .highlight { color: #b30000; font-weight: 600; }
         
-        /* COLORFUL TABLE LINES - NEW CODE */
+        /* COLORFUL TABLE LINES - 10/10 VERSION */
+        .red-section th, .red-section td { border: 1px solid #d32f2f; }
+        .red-section th { background: #d32f2f; color: white; }
         .blue-section th, .blue-section td { border: 1px solid #1976d2; }
         .blue-section th { background: #1976d2; color: white; }
         .green-section th, .green-section td { border: 1px solid #388e3c; }
         .green-section th { background: #388e3c; color: white; }
         .orange-section th, .orange-section td { border: 1px solid #f57c00; }
         .orange-section th { background: #f57c00; color: white; }
+        .purple-section th, .purple-section td { border: 1px solid #7b1fa2; }
+        .purple-section th { background: #7b1fa2; color: white; }
         
         .btn-group { padding: 20px; text-align: center; background: #f8f9fa; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
@@ -48,8 +52,9 @@
         @media (max-width: 768px) {
             .container { margin: 10px; border-radius: 0; }
             .top-bar h1 { font-size: 20px; }
-            th, td { padding: 8px; font-size: 14px; }
+            th, td { padding: 10px 8px; font-size: 14px; line-height: 1.5; }
             .btn { width: 90%; margin: 5px auto; }
+            .section-header { font-size: 16px; }
         }
     </style>
 </head>
@@ -65,7 +70,7 @@
             <p>Union Public Service Commission UPSC has released the Civil Services and Forest Services IAS / IFS Pre Examination 2026 Result. Candidates who appeared in Pre Exam can download result. Mains Online Form is now available from 19 June 2026 to 29 June 2026. Read the notification for eligibility, age limit, selection procedure, pay scale and all other information.</p>
         </div>
 
-        <div class="section">
+        <div class="section red-section">
             <div class="section-header red">📅 Important Dates</div>
             <table>
                 <tr><td><span class="highlight">Application Begin</span></td><td>04/02/2026</td></tr>
@@ -100,7 +105,7 @@
         </div>
 
         <div class="section orange-section">
-            <div class="section-header orange">📋 Vacancy Details : Total 1013 Posts</div>
+            <div class="section-header orange">📊 Vacancy Details : Total 1013 Posts</div>
             <table>
                 <tr><th>Post Name</th><th>Total Post</th><th>Eligibility</th></tr>
                 <tr><td><b>Indian Administrative Service IAS</b></td><td><span class="highlight">933</span></td><td>Bachelor Degree in Any Stream from Any Recognized University in India</td></tr>
@@ -108,7 +113,7 @@
             </table>
         </div>
 
-        <div class="section">
+        <div class="section purple-section">
             <div class="section-header purple">🏛️ Services Under UPSC Civil Services 2026</div>
             <table>
                 <tr><td>Indian Administrative Service IAS</td><td>Indian Foreign Service IFS</td></tr>
@@ -121,7 +126,7 @@
             </table>
         </div>
 
-        <div class="section">
+        <div class="section red-section">
             <div class="section-header red">📝 How to Fill UPSC IAS / IFS Mains Form 2026</div>
             <table>
                 <tr><td>1.</td><td>One Time Registration OTR is mandatory before applying</td></tr>
