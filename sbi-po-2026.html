@@ -163,5 +163,19 @@
             Mission Gyan Jobs | Last Updated: 21 June 2026 | For Educational Purpose Only
         </div>
     </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const topBar = document.querySelector('.top-bar');
+    if(topBar && !document.querySelector('.home-btn')) {
+        const homeBtn = document.createElement('a');
+        homeBtn.href = 'https://missiongyanjobs.github.io/';
+        homeBtn.className = 'home-btn';
+        homeBtn.innerHTML = '← Home';
+        homeBtn.style.cssText = 'position:absolute;left:20px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.2);color:white;padding:8px 15px;border-radius:5px;text-decoration:none;font-weight:600;font-size:14px;';
+        topBar.style.position = 'relative';
+        topBar.prepend(homeBtn);
+    }
+});
+</script>
 </body>
 </html>
