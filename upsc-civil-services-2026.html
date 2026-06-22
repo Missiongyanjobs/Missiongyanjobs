@@ -23,12 +23,20 @@
         .section-header.green { background: linear-gradient(135deg, #388e3c, #1b5e20); }
         .section-header.orange { background: linear-gradient(135deg, #f57c00, #e65100); }
         .section-header.purple { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
-        .section-header::before { content: "📋"; margin-right: 10px; font-size: 20px; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
         th { background: #f8f9fa; font-weight: 600; color: #b30000; }
         tr:hover { background: #f8f9fa; }
         .highlight { color: #b30000; font-weight: 600; }
+        
+        /* COLORFUL TABLE LINES - NEW CODE */
+        .blue-section th, .blue-section td { border: 1px solid #1976d2; }
+        .blue-section th { background: #1976d2; color: white; }
+        .green-section th, .green-section td { border: 1px solid #388e3c; }
+        .green-section th { background: #388e3c; color: white; }
+        .orange-section th, .orange-section td { border: 1px solid #f57c00; }
+        .orange-section th { background: #f57c00; color: white; }
+        
         .btn-group { padding: 20px; text-align: center; background: #f8f9fa; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
         .btn-primary { background: #d32f2f; color: white; }
@@ -58,7 +66,7 @@
         </div>
 
         <div class="section">
-            <div class="section-header red">Important Dates</div>
+            <div class="section-header red">📅 Important Dates</div>
             <table>
                 <tr><td><span class="highlight">Application Begin</span></td><td>04/02/2026</td></tr>
                 <tr><td><span class="highlight">Last Date for Apply Online</span></td><td>27/02/2026 upto 06:00 PM Only</td></tr>
@@ -71,8 +79,8 @@
             </table>
         </div>
 
-        <div class="section">
-            <div class="section-header blue">Application Fee</div>
+        <div class="section blue-section">
+            <div class="section-header blue">💰 Application Fee</div>
             <table>
                 <tr><th>Category</th><th>Fee</th></tr>
                 <tr><td>General / OBC / EWS</td><td><span class="highlight">₹100/-</span></td></tr>
@@ -82,8 +90,8 @@
             </table>
         </div>
 
-        <div class="section">
-            <div class="section-header green">Age Limit as on 01/08/2026</div>
+        <div class="section green-section">
+            <div class="section-header green">🎂 Age Limit as on 01/08/2026</div>
             <table>
                 <tr><td><span class="highlight">Minimum Age</span></td><td>21 Years</td></tr>
                 <tr><td><span class="highlight">Maximum Age</span></td><td>32 Years</td></tr>
@@ -91,8 +99,8 @@
             </table>
         </div>
 
-        <div class="section">
-            <div class="section-header orange">Vacancy Details : Total 1013 Posts</div>
+        <div class="section orange-section">
+            <div class="section-header orange">📋 Vacancy Details : Total 1013 Posts</div>
             <table>
                 <tr><th>Post Name</th><th>Total Post</th><th>Eligibility</th></tr>
                 <tr><td><b>Indian Administrative Service IAS</b></td><td><span class="highlight">933</span></td><td>Bachelor Degree in Any Stream from Any Recognized University in India</td></tr>
@@ -101,7 +109,7 @@
         </div>
 
         <div class="section">
-            <div class="section-header purple">Services Under UPSC Civil Services 2026</div>
+            <div class="section-header purple">🏛️ Services Under UPSC Civil Services 2026</div>
             <table>
                 <tr><td>Indian Administrative Service IAS</td><td>Indian Foreign Service IFS</td></tr>
                 <tr><td>Indian Police Service IPS</td><td>Indian P & T Accounts & Finance Service</td></tr>
@@ -114,7 +122,7 @@
         </div>
 
         <div class="section">
-            <div class="section-header red">How to Fill UPSC IAS / IFS Mains Form 2026</div>
+            <div class="section-header red">📝 How to Fill UPSC IAS / IFS Mains Form 2026</div>
             <table>
                 <tr><td>1.</td><td>One Time Registration OTR is mandatory before applying</td></tr>
                 <tr><td>2.</td><td>Login with OTR ID and Password at upsconline.nic.in</td></tr>
