@@ -153,30 +153,101 @@
             Mission Gyan Jobs | Last Updated: 21 June 2026 | For Educational Purpose Only
         </div>
     </div>
+<!-- Universal Home Button - MissionGyanJobs v3.0 -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const topBar = document.querySelector('.top-bar');
-    if(topBar && !document.querySelector('.home-btn')) {
-        const homeBtn = document.createElement('a');
-        homeBtn.href = 'https://missiongyanjobs.github.io/';
-        homeBtn.className = 'home-btn';
-        homeBtn.innerHTML = '← Home';
-        homeBtn.style.cssText = 'position:absolute;left:20px;top:50%;transform:translateY(-50%);background:#fff;color:#b30000;padding:8px 15px;border-radius:5px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.2);transition:0.3s;';
-        
-        // Hover effect
-        homeBtn.onmouseover = function() {
-            this.style.background = '#f5f5f5';
-            this.style.transform = 'translateY(-50%) scale(1.05)';
-        };
-        homeBtn.onmouseout = function() {
-            this.style.background = '#fff';
-            this.style.transform = 'translateY(-50%) scale(1)';
-        };
-        
-        topBar.style.position = 'relative';
-        topBar.prepend(homeBtn);
+(function(){
+  // Agar button pehle se hai to skip kar do
+  if(document.getElementById('mgj-home-btn')) return;
+  
+  var header = document.querySelector('.header-title, .top-bar, header, .navbar');
+  if(!header) return;
+  
+  // Professional Home Icon SVG - No external dependency
+  var homeIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`;
+  
+  var btn = document.createElement('a');
+  btn.id = 'mgj-home-btn';
+  btn.href = 'https://missiongyanjobs.github.io/';
+  btn.setAttribute('aria-label', 'Back to Homepage');
+  btn.innerHTML = homeIcon + '<span>Home</span>';
+  
+  // CSS - Mobile + Desktop dono ke liye perfect
+  var css = `
+    #mgj-home-btn {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      color: #b71c1c !important;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none !important;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+      z-index: 9999;
+      border: 1px solid rgba(183,28,28,0.1);
     }
-});
+    #mgj-home-btn:hover {
+      background: #b71c1c;
+      color: #ffffff !important;
+      transform: translateY(-50%) scale(1.05);
+      box-shadow: 0 4px 12px rgba(183,28,28,0.3);
+    }
+    #mgj-home-btn svg {
+      flex-shrink: 0;
+    }
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      #mgj-home-btn {
+        top: 12px;
+        transform: none;
+        padding: 6px 10px;
+        font-size: 13px;
+        gap: 4px;
+      }
+      #mgj-home-btn span {
+        display: none; /* Mobile pe sirf icon */
+      }
+      #mgj-home-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    /* Header me jagah banao */
+    .header-title, .top-bar, header { 
+      position: relative !important; 
+      min-height: 60px;
+    }
+    @media (max-width: 768px) {
+      .header-title, .top-bar, header { 
+        padding-top: 48px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .header-title, .top-bar, header { 
+        padding-left: 120px !important;
+      }
+    }
+  `;
+  
+  // CSS inject karo
+  var style = document.createElement('style');
+  style.innerHTML = css;
+  document.head.appendChild(style);
+  
+  // Button insert karo
+  header.insertBefore(btn, header.firstChild);
+})();
 </script>
 </body>
 </html>
