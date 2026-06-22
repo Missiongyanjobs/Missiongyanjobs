@@ -1,122 +1,297 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta name="google-site-verification" content="Yj6JWAOGszXtGIFpDstgXp8ZXNIyjsnH2utBVKIp1qM" />
+    <meta name="google-site-verification" content="Yj6JWAOGszXtGIFpDstgXp8ZXNIyjsnH2utBVKIp1qM" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Gyan Jobs - Latest Govt Jobs 2026</title>
-    <meta name="description" content="Mission Gyan Jobs - Latest Sarkari Naukri, Govt Jobs, Result, Admit Card, Answer Key 2026. UPSC, SSC, Bank, Railway, Police Bharti updates.">
+    <title>Mission Gyan Jobs - Latest Govt Jobs 2026 | Sarkari Result</title>
+    <meta name="description" content="Mission Gyan Jobs - Latest Sarkari Naukri, Govt Jobs, Result, Admit Card, Answer Key 2026. UPSC, SSC, DSSSB, RRB, Bank, Railway, Police Bharti updates.">
+    <meta name="keywords" content="sarkari result, govt jobs 2026, DSSSB 1979 posts, RRB technician 6565, UPSC 2026, latest jobs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body {font-family: Arial; margin: 0; background: #f0f0f0;}
-        .header {background: #AF0000; color: white; padding: 15px; text-align: center;}
-        .header h1 {margin: 0; font-size: 28px;}
-        .container {max-width: 1000px; margin: 20px auto; padding: 10px;}
-        .box {background: white; border: 2px solid #AF0000; margin-bottom: 20px;}
-        .box-title {background: #AF0000; color: white; padding: 8px; font-weight: bold; text-align: center;}
-        .box-content {padding: 15px;}
-        .box-content ul {list-style: none; padding: 0;}
-        .box-content li {padding: 8px; border-bottom: 1px dotted #ccc;}
-        .box-content a {text-decoration: none; color: #0000EE; font-weight: bold;}
-        .box-content a:hover {color: #AF0000;}
-        .grid {display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;}
-        .footer {background: #333; color: white; text-align: center; padding: 15px; margin-top: 20px;}
-        .footer a {color: #fff; text-decoration: none;}
-        .new-badge {background: #FF0000; color: white; font-size: 11px; padding: 2px 6px; border-radius: 3px; margin-left: 5px; animation: blink 1s infinite;}
-        @keyframes blink {0%, 50% {opacity: 1;} 51%, 100% {opacity: 0.3;}}
-        @media (max-width: 768px) {.grid {grid-template-columns: 1fr;}}
+        :root {
+            --primary: #B91C1C;
+            --primary-dark: #991B1B;
+            --primary-light: #FEE2E2;
+            --bg: #F9FAFB;
+            --card: #FFFFFF;
+            --text: #111827;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Card */
+        .box {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        .box:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        .box-title {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 14px 20px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .box-title::before {
+            content: '●';
+            font-size: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {0%, 100% {opacity: 1;} 50% {opacity: 0.5;}}
+        
+        .box-content {padding: 20px;}
+        .box-content ul {list-style: none;}
+        .box-content li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .box-content li:last-child {border-bottom: none;}
+        .box-content li:hover {
+            background: var(--primary-light);
+            margin: 0 -20px;
+            padding: 12px 20px;
+        }
+        .box-content a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .box-content a:hover {color: var(--primary);}
+        .box-content a::after {
+            content: '→';
+            opacity: 0;
+            transition: all 0.2s ease;
+            font-weight: 700;
+        }
+        .box-content li:hover a::after {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        /* New Badge */
+        .new-badge {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            color: white;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: glow 1.5s infinite;
+            flex-shrink: 0;
+        }
+        @keyframes glow {
+            0%, 100% {box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);}
+            50% {box-shadow: 0 0 15px rgba(239, 68, 68, 0.8);}
+        }
+
+        /* About Box */
+        .about-box {
+            grid-column: 1 / -1;
+        }
+        .about-box .box-content p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text);
+            color: #9CA3AF;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+        .footer p {margin: 8px 0; font-size: 14px;}
+        .footer a {
+            color: #D1D5DB;
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+        .footer a:hover {color: white;}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {font-size: 24px;}
+            .grid {grid-template-columns: 1fr; gap: 20px;}
+            .box-content {padding: 16px;}
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>MISSION GYAN JOBS</h1>
-        <p>missiongyanjobs.github.io</p>
+        <div class="header-content">
+            <h1>MISSION GYAN JOBS</h1>
+            <p>India's Fastest Sarkari Naukri Portal | missiongyanjobs.github.io</p>
+        </div>
     </div>
+
     <div class="container">
         <div class="grid">
-            <!-- LATEST JOBS SABSE UPAR -->
+            <!-- LATEST JOBS -->
             <div class="box">
                 <div class="box-title">Latest Jobs</div>
                 <div class="box-content">
                     <ul>
                         <li>
                             <a href="upsc-civil-services-2026.html" target="_blank">
-                                UPSC Civil Services IAS Mains 2026 - Pre Result, Apply Online
-                            </a>
-                            <span class="new-badge">New</span>
-                        </li>
-                        <li>
-                            <a href="https://ssc.gov.in/home/apply" target="_blank">
-                                SSC 10+2 CHSL 2025 Option Form - Apply Now
+                                <span>UPSC Civil Services IAS Mains 2026</span>
+                                <span class="new-badge">New</span>
                             </a>
                         </li>
                         <li>
-                            <a href="https://cdn.digialm.com/EForms/configuredHtml/1258/100343/login.html" target="_blank">
-                                Indian Air Force AFCAT 02/2026 - Apply Online
+                            <a href="dsssb-various-post-03-2026.html" target="_blank">
+                                <span>DSSSB Various Post 03/2026 - 1979 Posts</span>
+                                <span class="new-badge">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="rrb-technician-2026.html" target="_blank">
+                                <span>Railway RRB Technician 2026 - 6565 Posts</span>
+                                <span class="new-badge">New</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://sbi.bank.in/web/careers/current-openings" target="_blank">
-                                State Bank SBI PO 2026 - Apply Now
+                                <span>State Bank SBI PO 2026 - Apply Now</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <!-- RESULT BEECH ME -->
+            <!-- RESULT -->
             <div class="box">
                 <div class="box-title">Result</div>
                 <div class="box-content">
                    <ul>
                         <li>
                             <a href="upsc-civil-services-2026.html" target="_blank">
-                                UPSC CSE Prelims 2026 Result - Check Now
+                                <span>UPSC CSE Prelims 2026 Result</span>
+                                <span class="new-badge">New</span>
                             </a>
-                            <span class="new-badge">New</span>
                         </li>
                         <li>
                             <a href="https://ssc.gov.in/" target="_blank">
-                                SSC Delhi Police Constable 2025 Result - Check Now
+                                <span>SSC Delhi Police Constable 2025 Result</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">SSC CGL 2026 Result - Coming Soon</a>
+                            <a href="#" target="_blank">
+                                <span>SSC CGL 2026 Result - Coming Soon</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">IBPS PO 2026 Result - Coming Soon</a>
+                            <a href="#" target="_blank">
+                                <span>IBPS PO 2026 Result - Coming Soon</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <!-- ADMIT CARD UPDATED -->
+            <!-- ADMIT CARD -->
             <div class="box">
                 <div class="box-title">Admit Card</div>
                 <div class="box-content">
                     <ul>
                         <li>
                             <a href="https://ssc.gov.in/" target="_blank">
-                                SSC CGL 2026 Tier-1 Admit Card - Coming Soon
+                                <span>SSC CGL 2026 Tier-1 Admit Card</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://ibps.in/" target="_blank">
-                                IBPS RRB PO / Clerk 2026 Admit Card - Coming Soon
+                                <span>IBPS RRB PO / Clerk 2026 Admit Card</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://upsconline.nic.in/" target="_blank">
-                                UPSC EPFO 2026 Admit Card - Coming Soon
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ssc.gov.in/" target="_blank">
-                                SSC Selection Post Phase XIV 2026 Admit Card - Coming Soon
+                                <span>UPSC EPFO 2026 Admit Card</span>
                             </a>
                         </li>
                         <li>
                             <a href="https://csirnet.nta.ac.in/" target="_blank">
-                                CSIR NET 2026 Admit Card - Coming Soon
+                                <span>CSIR NET 2026 Admit Card</span>
                             </a>
                         </li>
                     </ul>
@@ -124,21 +299,23 @@
             </div>
         </div>
         
-        <div class="box">
+        <!-- ABOUT -->
+        <div class="box about-box">
             <div class="box-title">About Mission Gyan Jobs</div>
             <div class="box-content">
-                <p>Mission Gyan Jobs is India's No.1 website for all Sarkari Naukri, Result, Admit Card, Answer Key updates. All information is updated daily. We provide direct official links for all government job notifications.</p>
+                <p>Mission Gyan Jobs is India's No.1 website for all Sarkari Naukri, Result, Admit Card, Answer Key updates. All information is updated daily. We provide direct official links for all government job notifications. Get fastest updates for UPSC, SSC, DSSSB, RRB, Bank, Railway, Police & State Govt Bharti.</p>
             </div>
         </div>
     </div>
     
-    <!-- FOOTER ADD KAR DIYA -->
+    <!-- FOOTER -->
     <div class="footer">
-        <p>© 2026 Mission Gyan Jobs | All Rights Reserved</p>
+        <p><strong>© 2026 Mission Gyan Jobs</strong> | All Rights Reserved</p>
         <p>
             <a href="#">Privacy Policy</a> | 
             <a href="#">Contact Us</a> | 
-            <a href="#">Disclaimer</a>
+            <a href="#">Disclaimer</a> |
+            <a href="sitemap.xml">Sitemap</a>
         </p>
         <p>Contact: missiongyanjobs@gmail.com</p>
     </div>
