@@ -7,6 +7,7 @@
     <title>Mission Gyan Jobs - Latest Govt Jobs 2026 | Sarkari Result</title>
     <meta name="description" content="Mission Gyan Jobs - Latest Sarkari Naukri, Govt Jobs, Result, Admit Card, Answer Key 2026. UPSC, SSC, DSSSB, RRB, SBI PO, Bank, Railway, Police Bharti updates.">
     <meta name="keywords" content="sarkari result, govt jobs 2026, DSSSB 1979 posts, RRB technician 6565, SBI PO 1500, UPSC 2026, latest jobs">
+    <link rel="icon" type="image/png" href="logo.png">
     
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -18,20 +19,56 @@
             line-height: 1.6;
         }
 
-        .header {
-            background: #B91C1C;
+        /* PRO MAX HEADER WITH LOGO */
+        .pro-header {
+            background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 18px 15px;
-            text-align: center;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #fbbf24;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-        .header h1 {
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 6px;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-        .header p {
-            font-size: 15px;
-            font-weight: 500;
+        .logo-img {
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(251,191,36,0.8));
+            border: 2px solid #fbbf24;
+        }
+        .header-text h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .header-text p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin: 2px 0 0 0;
+        }
+        .offline-btn {
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(251,191,36,0.4);
+            transition: 0.2s;
+        }
+        .offline-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(251,191,36,0.6);
         }
 
         .container {
@@ -54,6 +91,8 @@
         .box {
             background: #fff;
             border: 2px solid #B91C1C;
+            border-radius: 6px;
+            overflow: hidden;
         }
         .box-title {
             background: #B91C1C;
@@ -123,18 +162,32 @@
         .footer a:hover {text-decoration: underline;}
 
         @media (max-width: 768px) {
-            .header h1 {font-size: 26px;}
-            .header p {font-size: 14px;}
+            .pro-header {flex-direction: column; gap: 12px; padding: 16px;}
+            .header-left {flex-direction: column; text-align: center; gap: 10px;}
+            .header-text h1 {font-size: 22px;}
+            .header-text p {font-size: 12px;}
+            .logo-img {height: 60px; width: 60px;}
+            .offline-btn {width: 100%; text-align: center;}
             .box-title {font-size: 17px;}
             .box-content a {font-size: 15px;}
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>MISSION GYAN JOBS</h1>
-        <p>India's Fastest Sarkari Naukri Portal | missiongyanjobs.github.io</p>
-    </div>
+    <!-- PRO MAX HEADER WITH GOL LOGO -->
+    <header class="pro-header">
+        <div class="header-left">
+            <img src="logo.png" alt="Mission Gyan Jobs Logo" class="logo-img">
+            <div class="header-text">
+                <h1>MISSION GYAN JOBS</h1>
+                <p>Latest Sarkari Naukri + Offline Forms 2026</p>
+            </div>
+        </div>
+        
+        <a href="/offline-forms.html" class="offline-btn">
+           📝 Offline Forms
+        </a>
+    </header>
 
     <div class="container">
         <div class="grid">
