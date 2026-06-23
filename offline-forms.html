@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offline Forms 2026 - Direct PDF Download | Mission Gyan Jobs</title>
-    <meta name="description" content="All Government Offline Forms 2026 PDF Download. Civil Court Ranchi, BRO GREF, Army, Air Force Offline Forms. Direct Download Links.">
-    <meta name="keywords" content="offline forms 2026, civil court ranchi form, bro gref offline form, army offline form pdf, government offline jobs">
+    <meta name="description" content="All Government Offline Forms 2026 PDF Download. Civil Court Ranchi, BRO GREF, Income Tax Sports, IAF Bangalore Offline Forms. Direct Download Links.">
+    <meta name="keywords" content="offline forms 2026, civil court ranchi form, bro gref offline form, income tax sports quota, iaf group c bangalore, government offline jobs">
     <link rel="icon" type="image/png" href="logo.png">
 
     <style>
@@ -89,14 +89,14 @@
             <h2>📝 Offline Forms 2026 - Direct PDF Download</h2>
             <div class="stats">
                 <div class="stat-box">
-                    <div class="number">2</div>
+                    <div class="number">4</div>
                     <div class="label">Total Forms</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">Updated</div>
                     <div class="label">5 mins ago</div>
                 </div>
-            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search: Court / BRO / Army / Police...">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search: Court / BRO / Income Tax / IAF / Police...">
         </div>
 
         <!-- TABS -->
@@ -134,6 +134,34 @@
                 <div class="btn-group">
                     <button class="btn btn-pdf" onclick="showLeadForm('gref')">📥 Download PDF</button>
                     <a href="bro-gref-2026.html" class="btn btn-details">📋 Details</a>
+                </div>
+            </div>
+
+            <!-- Income Tax Odisha Sports Form -->
+            <div class="form-card" data-category="upsc">
+                <div class="form-title">
+                    Income Tax Odisha Sports Quota 2026 <span class="new-badge">New</span>
+                </div>
+                <div class="form-info">📅 Last Date: <span>31 July 2026</span></div>
+                <div class="form-info">📍 Posts: <span>Tax Assistant, Steno, MTS - 12 Posts</span></div>
+                <div class="form-info">📄 Qualification: <span>10th/12th/Graduate + Sports Certificate</span></div>
+                <div class="btn-group">
+                    <button class="btn btn-pdf" onclick="showLeadForm('itodisha')">📥 Download PDF</button>
+                    <a href="income-tax-odisha-sports-2026.html" class="btn btn-details">📋 Details</a>
+                </div>
+            </div>
+
+            <!-- IAF Group C Bangalore Form -->
+            <div class="form-card" data-category="defence">
+                <div class="form-title">
+                    IAF Group C Bangalore MTS 2026 <span class="new-badge">New</span>
+                </div>
+                <div class="form-info">📅 Last Date: <span>27 July 2026</span></div>
+                <div class="form-info">📍 Posts: <span>Multi Tasking Staff - 06 Posts</span></div>
+                <div class="form-info">📄 Qualification: <span>10th Pass - No Fee</span></div>
+                <div class="btn-group">
+                    <button class="btn btn-pdf" onclick="showLeadForm('iafbangalore')">📥 Download PDF</button>
+                    <a href="iaf-groupc-bangalore-2026.html" class="btn btn-details">📋 Details</a>
                 </div>
             </div>
         </div>
@@ -190,14 +218,20 @@
         let currentFormName = '';
         
         function showLeadForm(formType) {
-            if(formType === 'ranchi') {
-                currentPdfUrl = 'https://naukarinew.in/wp-content/uploads/2026/06/Civil-Court-Ranchi-Form-2026-naukarinew.in_.pdf';
-                currentFormName = 'Civil Court Ranchi';
-            } else if(formType === 'gref') {
-                currentPdfUrl = 'https://naukarinew.in/wp-content/uploads/2026/05/BRO-GREF-01-2026-Application-Form-2026.pdf';
-                currentFormName = 'BRO GREF';
-            }
-            document.getElementById('leadModal').style.display = 'block';
+          if(formType === 'ranchi') {
+            currentPdfUrl = 'https://naukarinew.in/wp-content/uploads/2026/06/Civil-Court-Ranchi-Form-2026-naukarinew.in_.pdf';
+            currentFormName = 'Civil Court Ranchi';
+          } else if(formType === 'gref') {
+            currentPdfUrl = 'https://naukarinew.in/wp-content/uploads/2026/05/BRO-GREF-01-2026-Application-Form-2026.pdf';
+            currentFormName = 'BRO GREF';
+          } else if(formType === 'itodisha') {
+            currentPdfUrl = 'https://www.incometaxindia.gov.in/documents/d/guest/recruitment-of-meritorious-sportspersons-odisha-pdf';
+            currentFormName = 'Income Tax Odisha Sports';
+          } else if(formType === 'iafbangalore') {
+            currentPdfUrl = 'https://img2.freejobalert.com/news/2026/06/896329-6a3a220a9f9d077584693.pdf';
+            currentFormName = 'IAF Group C Bangalore';
+          }
+          document.getElementById('leadModal').style.display = 'block';
         }
         
         function closeLeadForm() {
