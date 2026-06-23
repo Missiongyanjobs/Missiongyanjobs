@@ -1,16 +1,22 @@
-## Hi there 👋
+# Mission Gyan Jobs - Latest Sarkari Naukri 2026
 
-<!--
-**Missiongyanjobs/Missiongyanjobs** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+India's Fastest Govt Job Portal for Latest Sarkari Naukri Updates 2026.
 
-Here are some ideas to get you started:
+### ✅ We Cover:
+- **Daily Updates:** Govt Jobs, Results, Admit Cards, Answer Keys
+- **Offline Forms:** Direct PDF Download for All States
+- **Major Exams:** UPSC, SSC, DSSSB, RRB, SBI PO, IBPS, Bank, Railway, Police
+- **Defence Jobs:** Indian Army Group C & Indian Air Force Non-Combatant Vacancy
+- **Study Material:** Syllabus, Selection Process, Free Class Updates
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🌐 Live Website
+**https://missiongyanjobs.github.io/**
+
+### 📢 Get Fastest Job Alerts
+**Telegram:** https://t.me/Missiongyanexams1
+
+### 📧 Contact Us
+**Email:** missiongyanjobs@gmail.com
+
+---
+© 2026 Mission Gyan Jobs | All Rights Reserved
