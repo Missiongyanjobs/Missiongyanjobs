@@ -1,15 +1,14 @@
-// common.js - MISSION GYAN JOBS - ULTIMATE PREMIUM v3.0
-// Ek baar daal de, zindagi bhar bhool ja
+// Mission Gyan Jobs - Common.js V4.0 Pro Max Premium
+// Features: Auto Tags + Countdown + Related Jobs + Bookmark + Telegram + Hindi Convert
 
 document.addEventListener('DOMContentLoaded', function() {
     
     const h1 = document.querySelector('h1');
     const metaDiv = document.getElementById('job-meta');
     
-    if(!h1) return; // Agar h1 nahi hai to kuch mat kar
+    if(!h1) return;
     
     // ===== 1. SMART DATA READER =====
-    // HTML se data uthao, nahi mile to default use karo
     const jobData = {
         qualification: metaDiv?.dataset.qualification || null,
         formMode: metaDiv?.dataset.formMode || null,
@@ -17,11 +16,29 @@ document.addEventListener('DOMContentLoaded', function() {
         post: metaDiv?.dataset.post || null,
         total: metaDiv?.dataset.total || null,
         lastDate: metaDiv?.dataset.lastDate || null,
-        showUpdated: metaDiv?.dataset.showUpdated !== 'false', // default true
-        showShare: metaDiv?.dataset.showShare !== 'false' // default true
+        showUpdated: metaDiv?.dataset.showUpdated!== 'false',
+        showShare: metaDiv?.dataset.showShare!== 'false'
     };
 
-    // ===== 2. DYNAMIC TAGS - JO HAI WOHI DIKHEGA =====
+    // ===== 2. COUNTDOWN CALCULATOR =====
+    function getCountdown(lastDateStr) {
+        if (!lastDateStr) return '';
+        const parts = lastDateStr.split('/');
+        if (parts.length!== 3) return '';
+        const lastDate = new Date(parts[2], parts[1] - 1, parts[0]);
+        const today = new Date();
+        today.setHours(0,0,0,0);
+        const diff = Math.ceil((lastDate - today) / (1000 * 60 * 60 * 24));
+        
+        if (diff < 0) return '<span style="background:#dc2626;color:#fff;padding:3px 10px;border-radius:6px;font-weight:600;margin-left:8px;">⛔ Expired</span>';
+        if (diff === 0) return '<span style="background:#dc2626;color:#fff;padding:3px 10px;border-radius:6px;font-weight:600;margin-left:8px;">⏳ Last Day Today</span>';
+        if (diff <= 7) return `<span style="background:#dc2626;color:#fff;padding:3px 10px;border-radius:6px;font-weight:600;margin-left:8px;">⏳ ${diff} Days Left</span>`;
+        return `<span style="background:#16a34a;color:#fff;padding:3px 10px;border-radius:6px;font-weight:600;margin-left:8px;">⏳ ${diff} Days Left</span>`;
+    }
+    
+    const countdownHTML = getCountdown(jobData.lastDate);
+
+    // ===== 3. DYNAMIC TAGS =====
     let tagsArray = [];
     if(jobData.qualification) tagsArray.push({text: jobData.qualification, color: '#4caf50'});
     if(jobData.formMode) tagsArray.push({text: jobData.formMode, color: '#2196f3'});
@@ -36,25 +53,25 @@ document.addEventListener('DOMContentLoaded', function() {
         h1.insertAdjacentHTML('afterend', tagsHTML);
     }
 
-    // ===== 3. LAST UPDATED - ON/OFF KAR SAKTE HO =====
+    // ===== 4. LAST UPDATED =====
     if(jobData.showUpdated) {
         let today = new Date().toLocaleDateString('en-GB', {day:'2-digit',month:'long',year:'numeric'});
         let updatedHTML = `<p style="font-size:13px;color:#1b5e20;margin:8px 0 15px 0;background:#e8f5e9;padding:8px 14px;border-left:4px solid #4caf50;border-radius:4px;display:inline-block;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.05);">✅ Last Updated: ${today}</p>`;
         h1.insertAdjacentHTML('afterend', updatedHTML);
     }
 
-    // ===== 4. INFO LINE - JO FIELD HAI WOHI DIKHEGA =====
+    // ===== 5. INFO LINE + COUNTDOWN =====
     let infoParts = [];
     if(jobData.post) infoParts.push(jobData.post);
     if(jobData.total) infoParts.push(`Total ${jobData.total} Posts`);
     if(jobData.lastDate) infoParts.push(`Last Date: ${jobData.lastDate}`);
     
     if(infoParts.length > 0) {
-        let infoLine = `<p style="font-size:14px;color:#fff;margin:-8px 0 18px 0;opacity:0.95;font-weight:500;">${infoParts.join(' | ')}</p>`;
+        let infoLine = `<p style="font-size:14px;color:#fff;margin:-8px 0 18px 0;opacity:0.95;font-weight:500;">${infoParts.join(' | ')} ${countdownHTML}</p>`;
         h1.insertAdjacentHTML('afterend', infoLine);
     }
 
-    // ===== 5. SHARE BUTTON - PREMIUM + ON/OFF =====
+    // ===== 6. SHARE + BOOKMARK + TELEGRAM =====
     if(jobData.showShare) {
         let title = document.title.replace(/ \| Mission Gyan Jobs/gi, '');
         let url = window.location.href;
@@ -73,7 +90,82 @@ document.addEventListener('DOMContentLoaded', function() {
                style="background:#333;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.25);transition:all 0.2s;">
                📋 Copy Link
             </button>
+            <button onclick="alert('Press Ctrl+D or Cmd+D to Bookmark this page');return false;" 
+               style="background:#7c3aed;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(124,58,237,0.35);transition:all 0.2s;">
+               ⭐ Bookmark This Job
+            </button>
+            <a href="https://t.me/missiongyanjobs" target="_blank" 
+               style="background:#229ED9;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(34,158,217,0.35);transition:all 0.2s;">
+               📢 Join Telegram Channel
+            </a>
         </div>`;
         document.body.insertAdjacentHTML('beforeend', shareHTML);
     }
+
+    // ===== 7. RELATED JOBS SECTION =====
+    const relatedJobs = [
+        {title: 'IAF Group C Recruitment 2026', desc: '10th Pass | 182 Posts | Last: 15/07/2026', url: '/iaf-groupc-2026.html'},
+        {title: 'Income Tax Sports Quota 2026', desc: '12th Pass | 55 Posts | Last: 30/07/2026', url: '/income-tax-sports-2026.html'},
+        {title: 'SSC MTS Recruitment 2026', desc: '10th Pass | 8000+ Posts | Last: 10/08/2026', url: '/ssc-mts-2026.html'},
+        {title: 'Railway Group D 2026', desc: '10th Pass | 32000 Posts | Last: 25/08/2026', url: '/railway-groupd-2026.html'}
+    ];
+    
+    const relatedCSS = `
+       .mgj-related{margin:25px 20px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}
+       .mgj-related-header{background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;padding:12px 15px;font-size:18px;font-weight:600}
+       .mgj-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;padding:15px;background:#faf5ff}
+       .mgj-related-card{background:#fff;border:1px solid #e9d5ff;border-radius:8px;padding:12px;text-decoration:none!important;color:#333;transition:0.2s}
+       .mgj-related-card:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(124,58,237,0.2)}
+       .mgj-related-card h4{color:#7c3aed;font-size:15px;margin-bottom:5px;font-weight:600}
+       .mgj-related-card p{font-size:12px;color:#666;margin:0}
+        @media(max-width:768px){.mgj-related-grid{grid-template-columns:1fr}}
+    `;
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = relatedCSS;
+    document.head.appendChild(styleTag);
+    
+    const relatedHTML = `
+        <div class="mgj-related">
+            <div class="mgj-related-header">🔥 Related Jobs</div>
+            <div class="mgj-related-grid">
+                ${relatedJobs.map(job => `
+                    <a href="${job.url}" class="mgj-related-card">
+                        <h4>${job.title}</h4>
+                        <p>${job.desc}</p>
+                    </a>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    const footerNote = document.querySelector('.footer-note');
+    if (footerNote) {
+        footerNote.insertAdjacentHTML('beforebegin', relatedHTML);
+    } else {
+        document.querySelector('.container').insertAdjacentHTML('beforeend', relatedHTML);
+    }
+
+    // ===== 8. ROMAN HINDI → DEVANAGARI AUTO CONVERT =====
+    const hindiMap = {
+        'Ye Bharti Kewal Purush Ummeedwaron Ke Liye Hai': 'यह भर्ती केवल पुरुष उम्मीदवारों के लिए है',
+        'Ye Bharti Kewal Mahila Ummeedwaron Ke Liye Hai': 'यह भर्ती केवल महिला उम्मीदवारों के लिए है',
+        'Mahila': 'महिला',
+        'Purush': 'पुरुष',
+        'Ummeedwaron': 'उम्मीदवारों',
+        'Ummeedwar': 'उम्मीदवार',
+        'Aavedan': 'आवेदन',
+        'Vigyapan': 'विज्ञापन',
+        'Padon': 'पदों',
+        'Yogya': 'योग्य',
+        'Ke Liye': 'के लिए'
+    };
+    
+    document.querySelectorAll('.alert-box,.note, td, p').forEach(el => {
+        let html = el.innerHTML;
+        for (let key in hindiMap) {
+            html = html.replace(new RegExp(key, 'gi'), hindiMap[key]);
+        }
+        el.innerHTML = html;
+    });
+
 });
