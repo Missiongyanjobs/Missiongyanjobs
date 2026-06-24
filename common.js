@@ -1,5 +1,5 @@
-// Mission Gyan Jobs - Common.js V4.0 Pro Max Premium
-// Features: Auto Tags + Countdown + Related Jobs + Bookmark + Telegram + Hindi Convert
+// Mission Gyan Jobs - Common.js V4.4 FINAL PRO MAX
+// Rule: Sirf Hindi Roman → Devanagari | English/Dates/Posts/Names = No Change
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showShare: metaDiv?.dataset.showShare!== 'false'
     };
 
-    // ===== 2. COUNTDOWN CALCULATOR =====
+    // ===== 2. COUNTDOWN =====
     function getCountdown(lastDateStr) {
         if (!lastDateStr) return '';
         const parts = lastDateStr.split('/');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         h1.insertAdjacentHTML('afterend', updatedHTML);
     }
 
-    // ===== 5. INFO LINE + COUNTDOWN =====
+    // ===== 5. INFO LINE =====
     let infoParts = [];
     if(jobData.post) infoParts.push(jobData.post);
     if(jobData.total) infoParts.push(`Total ${jobData.total} Posts`);
@@ -79,45 +79,45 @@ document.addEventListener('DOMContentLoaded', function() {
         <div id="mgj-share-box" style="text-align:center;margin:35px 0;padding:28px;background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%);border-radius:16px;border:1px solid #e8e8e8;box-shadow:0 4px 12px rgba(0,0,0,0.06)">
             <h3 style="margin:0 0 20px 0;font-size:22px;color:#222;font-weight:700;">📤 Share This Vacancy</h3>
             <a href="https://api.whatsapp.com/send?text=*${encodeURIComponent(title)}*%0A%0A👉 ${url}" target="_blank" 
-               style="background:#25D366;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(37,211,102,0.35);transition:all 0.2s;">
+               style="background:#25D366;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(37,211,102,0.35);">
                WhatsApp
             </a>
             <a href="https://t.me/share/url?url=${url}&text=${encodeURIComponent(title)}" target="_blank" 
-               style="background:#0088cc;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(0,136,204,0.35);transition:all 0.2s;">
+               style="background:#0088cc;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(0,136,204,0.35);">
                Telegram
             </a>
             <button onclick="navigator.clipboard.writeText('${url}');this.innerHTML='✅ Copied!';setTimeout(()=>{this.innerHTML='📋 Copy Link'},2000)" 
-               style="background:#333;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.25);transition:all 0.2s;">
+               style="background:#333;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.25);">
                📋 Copy Link
             </button>
-            <button onclick="alert('Press Ctrl+D or Cmd+D to Bookmark this page');return false;" 
-               style="background:#7c3aed;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(124,58,237,0.35);transition:all 0.2s;">
+            <button onclick="alert('Press Ctrl+D or Cmd+D to Bookmark');return false;" 
+               style="background:#7c3aed;color:white;padding:13px 30px;border-radius:10px;border:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 10px rgba(124,58,237,0.35);">
                ⭐ Bookmark This Job
             </button>
             <a href="https://t.me/missiongyanjobs" target="_blank" 
-               style="background:#229ED9;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(34,158,217,0.35);transition:all 0.2s;">
-               📢 Join Telegram Channel
+               style="background:#229ED9;color:white;padding:13px 30px;border-radius:10px;text-decoration:none;margin:8px;display:inline-block;font-weight:700;font-size:15px;box-shadow:0 4px 10px rgba(34,158,217,0.35);">
+               📢 Join Telegram for Daily Updates
             </a>
         </div>`;
         document.body.insertAdjacentHTML('beforeend', shareHTML);
     }
 
-    // ===== 7. RELATED JOBS SECTION =====
+    // ===== 7. RELATED JOBS - TERE ASLI LINKS =====
     const relatedJobs = [
-        {title: 'IAF Group C Recruitment 2026', desc: '10th Pass | 182 Posts | Last: 15/07/2026', url: '/iaf-groupc-2026.html'},
-        {title: 'Income Tax Sports Quota 2026', desc: '12th Pass | 55 Posts | Last: 30/07/2026', url: '/income-tax-sports-2026.html'},
-        {title: 'SSC MTS Recruitment 2026', desc: '10th Pass | 8000+ Posts | Last: 10/08/2026', url: '/ssc-mts-2026.html'},
-        {title: 'Railway Group D 2026', desc: '10th Pass | 32000 Posts | Last: 25/08/2026', url: '/railway-groupd-2026.html'}
+        {title: 'Civil Court Ranchi Recruitment 2026', desc: '10th Pass | 25 Posts | Offline Form', url: 'https://missiongyanjobs.github.io/civil-court-ranchi-2026.html'},
+        {title: 'BRO GREF Recruitment 2026', desc: '10th Pass | 411 Posts | Last Date: 12/08/2026', url: 'https://missiongyanjobs.github.io/bro-gref-2026.html'},
+        {title: 'Income Tax Odisha Sports Quota 2026', desc: '10th Pass | 55 Posts | Last Date: 30/07/2026', url: 'https://missiongyanjobs.github.io/income-tax-odisha-sports-2026.html'},
+        {title: 'IAF Group C Bangalore 2026', desc: '10th/12th Pass | 182 Posts | Last Date: 15/07/2026', url: 'https://missiongyanjobs.github.io/iaf-groupc-bangalore-2026.html'}
     ];
     
     const relatedCSS = `
-       .mgj-related{margin:25px 20px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}
-       .mgj-related-header{background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;padding:12px 15px;font-size:18px;font-weight:600}
-       .mgj-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;padding:15px;background:#faf5ff}
-       .mgj-related-card{background:#fff;border:1px solid #e9d5ff;border-radius:8px;padding:12px;text-decoration:none!important;color:#333;transition:0.2s}
-       .mgj-related-card:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(124,58,237,0.2)}
-       .mgj-related-card h4{color:#7c3aed;font-size:15px;margin-bottom:5px;font-weight:600}
-       .mgj-related-card p{font-size:12px;color:#666;margin:0}
+ .mgj-related{margin:25px 20px;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden}
+ .mgj-related-header{background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;padding:12px 15px;font-size:18px;font-weight:600}
+ .mgj-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;padding:15px;background:#faf5ff}
+ .mgj-related-card{background:#fff;border:1px solid #e9d5ff;border-radius:8px;padding:12px;text-decoration:none!important;color:#333;transition:0.2s}
+ .mgj-related-card:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(124,58,237,0.2)}
+ .mgj-related-card h4{color:#7c3aed;font-size:15px;margin-bottom:5px;font-weight:600}
+ .mgj-related-card p{font-size:12px;color:#666;margin:0}
         @media(max-width:768px){.mgj-related-grid{grid-template-columns:1fr}}
     `;
     const styleTag = document.createElement('style');
@@ -145,27 +145,79 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.container').insertAdjacentHTML('beforeend', relatedHTML);
     }
 
-    // ===== 8. ROMAN HINDI → DEVANAGARI AUTO CONVERT =====
-    const hindiMap = {
-        'Ye Bharti Kewal Purush Ummeedwaron Ke Liye Hai': 'यह भर्ती केवल पुरुष उम्मीदवारों के लिए है',
-        'Ye Bharti Kewal Mahila Ummeedwaron Ke Liye Hai': 'यह भर्ती केवल महिला उम्मीदवारों के लिए है',
-        'Mahila': 'महिला',
-        'Purush': 'पुरुष',
-        'Ummeedwaron': 'उम्मीदवारों',
-        'Ummeedwar': 'उम्मीदवार',
-        'Aavedan': 'आवेदन',
-        'Vigyapan': 'विज्ञापन',
-        'Padon': 'पदों',
-        'Yogya': 'योग्य',
-        'Ke Liye': 'के लिए'
-    };
-    
-    document.querySelectorAll('.alert-box,.note, td, p').forEach(el => {
-        let html = el.innerHTML;
-        for (let key in hindiMap) {
-            html = html.replace(new RegExp(key, 'gi'), hindiMap[key]);
-        }
-        el.innerHTML = html;
-    });
+    // ===== 8. SMART HINDI-ROMAN CONVERTER =====
+    const safeWords = new Set([
+        'Civil Court', 'Ranchi', 'Peon', 'Orderly', 'Registered Post', 'Speed Post', 
+        'Screening Test', 'Interview', 'Notification', 'Post', 'Posts', 'Pass',
+        'District', 'Office', 'Jharkhand', 'India', 'SSC', 'MTS', 'IAF', 'Group',
+        'Income Tax', 'Odisha', 'Railway', 'Bank', 'Police', 'Army', 'Navy', 
+        'Air Force', 'BRO', 'GREF', 'Bangalore', 'OBC', 'SC', 'ST', 'EWS', 'EBC', 
+        'General', 'Male', 'Female', 'Both', 'Online', 'Offline', 'WhatsApp', 
+        'Telegram', 'Link', 'Copy', 'Bookmark', 'Join', 'Share', 'This', 'Job', 
+        'Vacancy', 'Today', 'Days', 'Left', 'Expired', 'Last', 'Date', 'Updated', 
+        'Total', 'For', 'Educational', 'Purpose', 'Only', 'Important', 'Note', 
+        'Download', 'Official', 'Website', 'Mission Gyan Jobs'
+    ]);
 
+    const hindiRomanDict = {
+        'bhejna': 'भेजना', 'me': 'में', 'ke liye': 'के लिए', 'liye': 'लिए',
+        'ummeedwar': 'उम्मीदवार', 'ummeedwaron': 'उम्मीदवारों',
+        'swahastlikhit': 'स्वहस्तलिखित', 'aadhar': 'आधार', 'anusaar': 'अनुसार',
+        'bharti': 'भर्ती', 'vigyaapan': 'विज्ञापन', 'vigyapan': 'विज्ञापन',
+        'aavedan': 'आवेदन', 'yogya': 'योग्य', 'yogyata': 'योग्यता',
+        'pad': 'पद', 'padon': 'पदों', 'kewal': 'केवल', 'purush': 'पुरुष',
+        'mahila': 'महिला', 'evam': 'एवं', 'dono': 'दोनों', 'sarkari': 'सरकारी',
+        'naukri': 'नौकरी', 'devnagri': 'देवनागरी', 'lipi': 'लिपि',
+        'lifaafa': 'लिफाफा', 'lifaafe': 'लिफाफे', 'par': 'पर',
+        'dak': 'डाक', 'anivarya': 'अनिवार्य', 'sankhya': 'संख्या',
+        'naam': 'नाम', 'likhna': 'लिखना', 'hoga': 'होगा', 'hai': 'है',
+        'ka': 'का', 'ki': 'की', 'ko': 'को', 'se': 'से', 'aur': 'और', 
+        'ya': 'या', 'ek': 'एक', 'do': 'दो', 'teen': 'तीन', 'chaar': 'चार',
+        'paanch': 'पांच', 'saal': 'साल', 'varsh': 'वर्ष', 'umar': 'उम्र', 
+        'aayu': 'आयु', 'shulk': 'शुल्क', 'maany': 'मान्य', 
+        'niyamanusaar': 'नियमानुसार', 'chhoot': 'छूट', 'ullekhit': 'उल्लेखित',
+        'nahi': 'नहीं', 'sath': 'साथ', 'apna': 'अपना', 'apne': 'अपने'
+    };
+
+    function isSafeWord(word) {
+        if (/\d/.test(word)) return true;
+        if (word.includes('/')) return true;
+        if (word.includes('-')) return true;
+        if (word.length <= 2) return true;
+        return safeWords.has(word);
+    }
+
+    function convertRomanHindi(text) {
+        // Step 1: Pure vakya
+        text = text.replace(/IMPORTANT: Ye Bharti Keval Purush Ummeedwaron \(Male Only\) Ke Liye Hai/gi, 
+                           '⚠️ IMPORTANT: यह भर्ती केवल पुरुष उम्मीदवारों के लिए है।');
+        text = text.replace(/IMPORTANT: Ye Bharti Keval Mahila Ummeedwaron \(Female Only\) Ke Liye Hai/gi, 
+                           '⚠️ IMPORTANT: यह भर्ती केवल महिला उम्मीदवारों के लिए है।');
+        text = text.replace(/Ye Bharti Keval Purush Ummeedwaron Ke Liye Hai/gi, 
+                           'यह भर्ती केवल पुरुष उम्मीदवारों के लिए है।');
+        text = text.replace(/Ye Bharti Keval Mahila Ummeedwaron Ke Liye Hai/gi, 
+                           'यह भर्ती केवल महिला उम्मीदवारों के लिए है।');
+        
+        // Step 2: Word by word, sirf Hindi Roman
+        return text.replace(/\b([a-zA-Z]+)\b/g, (word) => {
+            if (isSafeWord(word)) return word;
+            const lowerWord = word.toLowerCase();
+            if (hindiRomanDict[lowerWord]) {
+                return hindiRomanDict[lowerWord];
+            }
+            return word;
+        });
+    }
+
+    function scanAndConvert(node) {
+        if (node.nodeType === 3) {
+            node.nodeValue = convertRomanHindi(node.nodeValue);
+        } else if (node.nodeType === 1 &&!['SCRIPT', 'STYLE', 'INPUT', 'TEXTAREA', 'SELECT'].includes(node.nodeName)) {
+            for (let child of node.childNodes) {
+                scanAndConvert(child);
+            }
+        }
+    }
+    
+    scanAndConvert(document.body);
 });
