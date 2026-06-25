@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,50 +10,50 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; line-height: 1.7; }
-     .container { max-width: 1100px; margin: 20px auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
-     .top-bar { background: linear-gradient(135deg, #1e3a8a, #1e40af); color: white; padding: 20px; text-align: center; position: relative; }
-     .top-bar h1 { font-size: 26px; margin-bottom: 5px; }
-     .top-bar p { font-size: 14px; opacity: 0.9; }
-     .alert-box { background: #d1fae5; border-left: 5px solid #10b981; padding: 12px; margin: 20px; border-radius: 4px; font-weight: 700; color: #065f46; text-align: center; }
-     .post-meta { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px; border-radius: 4px; }
-     .post-meta h2 { color: #b30000; font-size: 18px; margin-bottom: 8px; }
-     .section { margin: 25px 20px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
-     .section-header { padding: 12px 15px; font-size: 18px; font-weight: 600; color: white; display: flex; align-items: center; }
-     .section-header.red { background: linear-gradient(135deg, #d32f2f, #b71c1c); }
-     .section-header.blue { background: linear-gradient(135deg, #1976d2, #0d47a1); }
-     .section-header.green { background: linear-gradient(135deg, #388e3c, #1b5e20); }
-     .section-header.orange { background: linear-gradient(135deg, #f57c00, #e65100); }
-     .section-header.purple { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
+    .container { max-width: 1100px; margin: 20px auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+    .top-bar { background: linear-gradient(135deg, #1e3a8a, #1e40af); color: white; padding: 20px; text-align: center; position: relative; }
+    .top-bar h1 { font-size: 26px; margin-bottom: 5px; }
+    .top-bar p { font-size: 14px; opacity: 0.9; }
+    .alert-box { background: #d1fae5; border-left: 5px solid #10b981; padding: 12px; margin: 20px; border-radius: 4px; font-weight: 700; color: #065f46; text-align: center; }
+    .post-meta { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 20px; border-radius: 4px; }
+    .post-meta h2 { color: #b30000; font-size: 18px; margin-bottom: 8px; }
+    .section { margin: 25px 20px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+    .section-header { padding: 12px 15px; font-size: 18px; font-weight: 600; color: white; display: flex; align-items: center; }
+    .section-header.red { background: linear-gradient(135deg, #d32f2f, #b71c1c); }
+    .section-header.blue { background: linear-gradient(135deg, #1976d2, #0d47a1); }
+    .section-header.green { background: linear-gradient(135deg, #388e3c, #1b5e20); }
+    .section-header.orange { background: linear-gradient(135deg, #f57c00, #e65100); }
+    .section-header.purple { background: linear-gradient(135deg, #7b1fa2, #4a148c); }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
         th { background: #f8f9fa; font-weight: 600; color: #b30000; }
         tr:hover { background: #f8f9fa; }
-     .highlight { color: #b30000; font-weight: 600; }
-     .red-section th,.red-section td { border: 1px solid #d32f2f; }
-     .red-section th { background: #d32f2f; color: white; }
-     .blue-section th,.blue-section td { border: 1px solid #1976d2; }
-     .blue-section th { background: #1976d2; color: white; }
-     .green-section th,.green-section td { border: 1px solid #388e3c; }
-     .green-section th { background: #388e3c; color: white; }
-     .orange-section th,.orange-section td { border: 1px solid #f57c00; }
-     .orange-section th { background: #f57c00; color: white; }
-     .purple-section th,.purple-section td { border: 1px solid #7b1fa2; }
-     .purple-section th { background: #7b1fa2; color: white; }
-     .btn-group { padding: 20px; text-align: center; background: #f8f9fa; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-     .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
-     .btn-primary { background: #d32f2f; color: white; }
-     .btn-success { background: #388e3c; color: white; }
-     .btn-info { background: #1976d2; color: white; }
-     .btn-warning { background: #f57c00; color: white; }
-     .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-     .note { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 12px; margin: 15px 20px; font-size: 14px; }
-     .footer-note { text-align: center; padding: 15px; font-size: 13px; color: #666; background: #f8f9fa; }
+    .highlight { color: #b30000; font-weight: 600; }
+    .red-section th,.red-section td { border: 1px solid #d32f2f; }
+    .red-section th { background: #d32f2f; color: white; }
+    .blue-section th,.blue-section td { border: 1px solid #1976d2; }
+    .blue-section th { background: #1976d2; color: white; }
+    .green-section th,.green-section td { border: 1px solid #388e3c; }
+    .green-section th { background: #388e3c; color: white; }
+    .orange-section th,.orange-section td { border: 1px solid #f57c00; }
+    .orange-section th { background: #f57c00; color: white; }
+    .purple-section th,.purple-section td { border: 1px solid #7b1fa2; }
+    .purple-section th { background: #7b1fa2; color: white; }
+    .btn-group { padding: 20px; text-align: center; background: #f8f9fa; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+    .btn-primary { background: #d32f2f; color: white; }
+    .btn-success { background: #388e3c; color: white; }
+    .btn-info { background: #1976d2; color: white; }
+    .btn-warning { background: #f57c00; color: white; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .note { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 12px; margin: 15px 20px; font-size: 14px; }
+    .footer-note { text-align: center; padding: 15px; font-size: 13px; color: #666; background: #f8f9fa; }
         @media (max-width: 768px) {
-         .container { margin: 10px; border-radius: 0; }
-         .top-bar h1 { font-size: 20px; }
+        .container { margin: 10px; border-radius: 0; }
+        .top-bar h1 { font-size: 20px; }
             th, td { padding: 10px 6px; font-size: 13px; line-height: 1.5; }
-         .btn { width: 90%; margin: 5px auto; }
-         .section-header { font-size: 16px; }
+        .btn { width: 90%; margin: 5px auto; }
+        .section-header { font-size: 16px; }
         }
     </style>
 </head>
@@ -67,12 +67,12 @@
         </div>
 
         <div class="alert-box">
-            ✅ NO FEES: Kisi bhi category ke liye koi application fee nahi hai
+            ✅ NO FEES: No application fee for any category
         </div>
 
         <div class="post-meta">
             <h2>Short Information</h2>
-            <p>Indian Air Force IAM Bangalore ne Group C Civilian Category me Multi Tasking Staff MTS ke 06 padon par bharti nikali hai. Yogya 10th Pass ummeedwar 23/06/2026 se 27/07/2026 tak offline form bhej sakte hain. Form Ordinary Post ya By Hand jama karna hai. Posting Bangalore Karnataka me hogi.</p>
+            <p>Indian Air Force IAM Bangalore has released notification for recruitment of Multi Tasking Staff MTS in Group C Civilian Category for 06 posts. Eligible 10th Pass candidates can submit offline form from 23/06/2026 to 27/07/2026. Form must be sent via Ordinary Post or By Hand. Posting will be at Bangalore, Karnataka.</p>
         </div>
 
         <div class="section red-section">
@@ -91,7 +91,7 @@
                 <tr><th>Category</th><th>Fee</th></tr>
                 <tr><td>General / OBC / EWS</td><td><span class="highlight">₹0/-</span></td></tr>
                 <tr><td>SC / ST / All Category</td><td><span class="highlight">₹0/-</span></td></tr>
-                <tr><td colspan="2"><b>Note:</b> No examination fees for any category. Sirf 10 rupee ka postal stamp envelope par lagana hai.</td></tr>
+                <tr><td colspan="2"><b>Note:</b> No examination fees for any category. Only Rs. 10 postal stamp required on envelope.</td></tr>
             </table>
         </div>
 
@@ -102,7 +102,7 @@
                 <tr><td><span class="highlight">Maximum Age (General)</span></td><td>25 Years</td></tr>
                 <tr><td><span class="highlight">Maximum Age (OBC)</span></td><td>28 Years (3 Year Relaxation)</td></tr>
                 <tr><td><span class="highlight">Maximum Age (SC/ST)</span></td><td>30 Years (5 Year Relaxation)</td></tr>
-                <tr><td colspan="2"><b>Age Relaxation:</b> As per Govt Rules. PwBD candidates ko extra relaxation.</td></tr>
+                <tr><td colspan="2"><b>Age Relaxation:</b> As per Govt Rules. Extra relaxation for PwBD candidates.</td></tr>
             </table>
         </div>
 
@@ -118,11 +118,11 @@
         <div class="section purple-section">
             <div class="section-header purple">🎯 Selection Process</div>
             <table>
-                <tr><td><span class="highlight">Stage 1</span></td><td>Scrutiny of Application - Aavedan ki jaanch padtaal</td></tr>
-                <tr><td><span class="highlight">Stage 2</span></td><td>Written Examination - Likhit Pariksha</td></tr>
-                <tr><td><span class="highlight">Stage 3</span></td><td>Skill Test / Practical Test - Kaushal Pariksha</td></tr>
-                <tr><td><span class="highlight">Stage 4</span></td><td>Documents Verification - Dastavejon ka satyapan</td></tr>
-                <tr><td><span class="highlight">Stage 5</span></td><td>Medical Examination - Chikitsa Parikshan</td></tr>
+                <tr><td><span class="highlight">Stage 1</span></td><td>Scrutiny of Application</td></tr>
+                <tr><td><span class="highlight">Stage 2</span></td><td>Written Examination</td></tr>
+                <tr><td><span class="highlight">Stage 3</span></td><td>Skill Test / Practical Test</td></tr>
+                <tr><td><span class="highlight">Stage 4</span></td><td>Documents Verification</td></tr>
+                <tr><td><span class="highlight">Stage 5</span></td><td>Medical Examination</td></tr>
                 <tr><td><span class="highlight">Final</span></td><td>Joining Letter</td></tr>
             </table>
         </div>
@@ -130,25 +130,25 @@
         <div class="section red-section">
             <div class="section-header red">📝 How to Apply Offline</div>
             <table>
-                <tr><td>1.</td><td>Notification se application form A-4 size paper par print karein</td></tr>
-                <tr><td>2.</td><td>Form ko English me Block Letters me Blue/Black pen se bharein</td></tr>
-                <tr><td>3.</td><td>Documents attach karein: 10th Certificate, Domicile, Caste Certificate, Aadhar, 2 Photos, Experience if any. Sab self-attested</td></tr>
-                <tr><td>4.</td><td>Ek envelope jisme 10 rupee ka postal stamp laga ho, saath bhejein</td></tr>
-                <tr><td>5.</td><td>Form ko Ordinary Post ya By Hand is pate par bhejein: <br><b>Commandant, Institute of Aerospace Medicine IAM, Indian Air Force IAF, Vimanpura PO, Bangalore - 560017 [Karnataka]</b></td></tr>
-                <tr><td colspan="2"><b>Note:</b> Speed Post/Registered Post accepted nahi hai. Only Ordinary Post ya By Hand.</td></tr>
+                <tr><td>1.</td><td>Print the application form on A-4 size paper from notification</td></tr>
+                <tr><td>2.</td><td>Fill the form in English using Block Letters with Blue/Black pen</td></tr>
+                <tr><td>3.</td><td>Attach documents: 10th Certificate, Domicile, Caste Certificate, Aadhar, 2 Photos, Experience if any. All self-attested</td></tr>
+                <tr><td>4.</td><td>Attach one envelope with Rs. 10 postal stamp</td></tr>
+                <tr><td>5.</td><td>Send form via Ordinary Post or By Hand to: <br><b>Commandant, Institute of Aerospace Medicine IAM, Indian Air Force IAF, Vimanpura PO, Bangalore - 560017 [Karnataka]</b></td></tr>
+                <tr><td colspan="2"><b>Note:</b> Speed Post/Registered Post not accepted. Only Ordinary Post or By Hand.</td></tr>
             </table>
         </div>
 
         <div class="section green-section">
             <div class="section-header green">📋 Documents List</div>
             <table>
-                <tr><td>1.</td><td>Educational Qualification Certificate - Shaikshik Yogyata</td></tr>
-                <tr><td>2.</td><td>Domicile Certificate - Niwas Praman Patra</td></tr>
-                <tr><td>3.</td><td>Caste Certificate - Jati Praman Patra</td></tr>
+                <tr><td>1.</td><td>Educational Qualification Certificate</td></tr>
+                <tr><td>2.</td><td>Domicile Certificate</td></tr>
+                <tr><td>3.</td><td>Caste Certificate</td></tr>
                 <tr><td>4.</td><td>Aadhar Card</td></tr>
-                <tr><td>5.</td><td>Two Passport Size Photograph - 2 Photo</td></tr>
-                <tr><td>6.</td><td>One Envelope with 10 Rs Postal Stamp</td></tr>
-                <tr><td>7.</td><td>Experience Certificate - Yadi ho to</td></tr>
+                <tr><td>5.</td><td>Two Passport Size Photographs</td></tr>
+                <tr><td>6.</td><td>One Envelope with Rs. 10 Postal Stamp</td></tr>
+                <tr><td>7.</td><td>Experience Certificate - If available</td></tr>
                 <tr><td colspan="2"><b>Important:</b> All documents must be self-attested. Only one application per candidate allowed.</td></tr>
             </table>
         </div>
