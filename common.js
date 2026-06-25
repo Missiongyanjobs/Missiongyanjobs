@@ -1,5 +1,5 @@
-// Mission Gyan Jobs - Common.js V4.6 PRO MAX FINAL FIXED
-// Rule: 100% English Only | Auto Syllabus + FAQ | No Dummy Data | Fixed Related Jobs Position
+// Mission Gyan Jobs - Common.js V4.7 PRO MAX FINAL WORKING
+// Rule: 100% English Only | Auto Syllabus + FAQ | Fixed Position At Page End
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         h1.insertAdjacentHTML('afterend', infoLine);
     }
 
-    const jobPage = document.getElementById('job-page');
+    const jobPage = document.getElementById('job-page') || document.querySelector('.container');
     if (!jobPage) return;
 
     // ===== 6. AUTO SYLLABUS - ONLY IF DATA EXISTS =====
@@ -99,9 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <p><strong>Note:</strong> For detailed syllabus, please check Official Notification.</p>
             </div>`;
-            const linksSection = Array.from(jobPage.querySelectorAll('.section-title')).find(el => el.textContent.includes('Important Links'));
-            if (linksSection) {
-                linksSection.closest('.content-section').insertAdjacentHTML('beforebegin', syllabusHTML);
+            const lastSection = jobPage.querySelector('.content-section:last-of-type');
+            if (lastSection) {
+                lastSection.insertAdjacentHTML('afterend', syllabusHTML);
+            } else {
+                jobPage.insertAdjacentHTML('beforeend', syllabusHTML);
             }
         }
     }
@@ -135,14 +137,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="faq-container">${faqHTML}</div>
             </div>`;
 
-            const targetSection = document.getElementById('auto-syllabus') || Array.from(jobPage.querySelectorAll('.section-title')).find(el => el.textContent.includes('Important Links')).closest('.content-section');
-            if (targetSection) {
-                targetSection.insertAdjacentHTML('afterend', fullFaqHTML);
+            const lastSection = jobPage.querySelector('.content-section:last-of-type');
+            if (lastSection) {
+                lastSection.insertAdjacentHTML('afterend', fullFaqHTML);
+            } else {
+                jobPage.insertAdjacentHTML('beforeend', fullFaqHTML);
             }
         }
     }
 
-    // ===== 8. RELATED JOBS - FIXED POSITION =====
+    // ===== 8. RELATED JOBS - ALWAYS AT END OF PAGE =====
     const relatedJobs = [
         {title: 'Civil Court Ranchi Recruitment 2026', desc: '10th Pass | 25 Posts | Offline Form', url: 'https://missiongyanjobs.github.io/civil-court-ranchi-2026.html'},
         {title: 'BRO GREF Recruitment 2026', desc: '10th Pass | 411 Posts | Last Date: 12/08/2026', url: 'https://missiongyanjobs.github.io/bro-gref-2026.html'},
@@ -160,9 +164,12 @@ document.addEventListener('DOMContentLoaded', function() {
 .mgj-related-card p{font-size:12px;color:#666;margin:0}
         @media(max-width:768px){.mgj-related-grid{grid-template-columns:1fr}}
     `;
-    const styleTag = document.createElement('style');
-    styleTag.innerHTML = relatedCSS;
-    document.head.appendChild(styleTag);
+    if (!document.getElementById('mgj-related-style')) {
+        const styleTag = document.createElement('style');
+        styleTag.id = 'mgj-related-style';
+        styleTag.innerHTML = relatedCSS;
+        document.head.appendChild(styleTag);
+    }
 
     const relatedHTML = `
         <div class="mgj-related" id="auto-related-jobs">
@@ -178,15 +185,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
 
-    // Important Links section ke baad insert karo
-    const importantLinksSection = Array.from(jobPage.querySelectorAll('.section-title')).find(el => el.textContent.includes('Important Links'));
-    if (importantLinksSection) {
-        importantLinksSection.closest('.content-section').insertAdjacentHTML('afterend', relatedHTML);
-    } else {
-        jobPage.insertAdjacentHTML('beforeend', relatedHTML);
-    }
+    jobPage.insertAdjacentHTML('beforeend', relatedHTML);
 
-    // ===== 9. SHARE + BOOKMARK + TELEGRAM - RELATED JOBS KE BAAD =====
+    // ===== 9. SHARE + BOOKMARK + TELEGRAM - ALWAYS AT VERY END =====
     if(jobData.showShare) {
         let title = document.title.replace(/ \| Mission Gyan Jobs/gi, '');
         let url = window.location.href;
@@ -215,12 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
         </div>`;
 
-        const relatedSection = document.getElementById('auto-related-jobs');
-        if (relatedSection) {
-            relatedSection.insertAdjacentHTML('afterend', shareHTML);
-        } else {
-            jobPage.insertAdjacentHTML('beforeend', shareHTML);
-        }
+        jobPage.insertAdjacentHTML('beforeend', shareHTML);
     }
 
 });
