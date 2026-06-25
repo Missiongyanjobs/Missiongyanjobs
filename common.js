@@ -1,17 +1,23 @@
-// Mission Gyan Jobs - Common.js V4.7 PRO MAX FINAL WORKING
-// Rule: 100% English Only | Auto Syllabus + FAQ | Fixed Position At Page End
+// Mission Gyan Jobs - Common.js V5.0 UNIVERSAL FINAL
+// Rule: 100% English Only | Auto Works On All Future Vacancies | Online + Offline
 
 document.addEventListener('DOMContentLoaded', function() {
 
     const h1 = document.querySelector('h1');
-    const metaDiv = document.getElementById('job-meta');
-
     if(!h1) return;
 
-    // ===== 1. SMART DATA READER =====
+    // ===== 1. AUTO FIND MAIN CONTAINER - WORKS EVERYWHERE =====
+    const jobPage = document.getElementById('job-page') ||
+                    document.querySelector('.container') ||
+                    document.querySelector('main') ||
+                    document.querySelector('.main-content') ||
+                    document.body;
+
+    // ===== 2. SMART DATA READER =====
+    const metaDiv = document.getElementById('job-meta');
     const jobData = {
-        qualification: metaDiv?.dataset.qualification || null,
-        formMode: metaDiv?.dataset.formMode || null,
+        qualification: metaDiv?.dataset.qualification || 'Not Specified',
+        formMode: metaDiv?.dataset.formMode || 'Check Notification',
         status: metaDiv?.dataset.status || 'New Vacancy',
         post: metaDiv?.dataset.post || null,
         total: metaDiv?.dataset.total || null,
@@ -20,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showShare: metaDiv?.dataset.showShare!== 'false'
     };
 
-    // ===== 2. COUNTDOWN =====
+    // ===== 3. COUNTDOWN =====
     function getCountdown(lastDateStr) {
         if (!lastDateStr) return '';
         const parts = lastDateStr.split('/');
@@ -38,14 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const countdownHTML = getCountdown(jobData.lastDate);
 
-    // ===== 3. DYNAMIC TAGS =====
+    // ===== 4. DYNAMIC TAGS =====
     let tagsArray = [];
-    if(jobData.qualification) tagsArray.push({text: jobData.qualification, color: '#4caf50'});
-    if(jobData.formMode) tagsArray.push({text: jobData.formMode, color: '#2196f3'});
+    if(jobData.qualification && jobData.qualification!== 'Not Specified') tagsArray.push({text: jobData.qualification, color: '#4caf50'});
+    if(jobData.formMode && jobData.formMode!== 'Check Notification') tagsArray.push({text: jobData.formMode, color: '#2196f3'});
     if(jobData.status) tagsArray.push({text: jobData.status, color: '#ff5722'});
 
     if(tagsArray.length > 0) {
-        let tagsHTML = `<div style="margin:0 0 12px 0;display:flex;flex-wrap:wrap;gap:8px;">`;
+        let tagsHTML = `<div id="mgj-tags" style="margin:0 0 12px 0;display:flex;flex-wrap:wrap;gap:8px;">`;
         tagsArray.forEach(tag => {
             tagsHTML += `<span style="background:${tag.color};color:white;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;box-shadow:0 2px 4px rgba(0,0,0,0.1);">${tag.text}</span>`;
         });
@@ -53,32 +59,29 @@ document.addEventListener('DOMContentLoaded', function() {
         h1.insertAdjacentHTML('afterend', tagsHTML);
     }
 
-    // ===== 4. LAST UPDATED =====
+    // ===== 5. LAST UPDATED =====
     if(jobData.showUpdated) {
         let today = new Date().toLocaleDateString('en-GB', {day:'2-digit',month:'long',year:'numeric'});
-        let updatedHTML = `<p style="font-size:13px;color:#1b5e20;margin:8px 0 15px 0;background:#e8f5e9;padding:8px 14px;border-left:4px solid #4caf50;border-radius:4px;display:inline-block;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.05);">✅ Last Updated: ${today}</p>`;
+        let updatedHTML = `<p id="mgj-updated" style="font-size:13px;color:#1b5e20;margin:8px 0 15px 0;background:#e8f5e9;padding:8px 14px;border-left:4px solid #4caf50;border-radius:4px;display:inline-block;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.05);">✅ Last Updated: ${today}</p>`;
         h1.insertAdjacentHTML('afterend', updatedHTML);
     }
 
-    // ===== 5. INFO LINE =====
+    // ===== 6. INFO LINE =====
     let infoParts = [];
     if(jobData.post) infoParts.push(jobData.post);
     if(jobData.total) infoParts.push(`Total ${jobData.total} Posts`);
     if(jobData.lastDate) infoParts.push(`Last Date: ${jobData.lastDate}`);
 
     if(infoParts.length > 0) {
-        let infoLine = `<p style="font-size:14px;color:#fff;margin:-8px 0 18px 0;opacity:0.95;font-weight:500;">${infoParts.join(' | ')} ${countdownHTML}</p>`;
+        let infoLine = `<p id="mgj-info" style="font-size:14px;color:#fff;margin:-8px 0 18px 0;opacity:0.95;font-weight:500;">${infoParts.join(' | ')} ${countdownHTML}</p>`;
         h1.insertAdjacentHTML('afterend', infoLine);
     }
 
-    const jobPage = document.getElementById('job-page') || document.querySelector('.container');
-    if (!jobPage) return;
-
-    // ===== 6. AUTO SYLLABUS - ONLY IF DATA EXISTS =====
+    // ===== 7. AUTO SYLLABUS - ONLY IF DATA EXISTS =====
     const syllabusData = document.getElementById('job-syllabus');
     if (syllabusData) {
         const subjects = [];
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 15; i++) {
             const sub = syllabusData.getAttribute(`data-subject${i}`);
             if (sub && sub.trim()!== '') {
                 const parts = sub.split('|');
@@ -99,16 +102,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <p><strong>Note:</strong> For detailed syllabus, please check Official Notification.</p>
             </div>`;
-            const lastSection = jobPage.querySelector('.content-section:last-of-type');
-            if (lastSection) {
-                lastSection.insertAdjacentHTML('afterend', syllabusHTML);
+            const allSections = jobPage.querySelectorAll('.content-section');
+            if (allSections.length > 0) {
+                allSections[allSections.length - 1].insertAdjacentHTML('afterend', syllabusHTML);
             } else {
                 jobPage.insertAdjacentHTML('beforeend', syllabusHTML);
             }
         }
     }
 
-    // ===== 7. AUTO FAQ - ONLY IF DATA EXISTS =====
+    // ===== 8. AUTO FAQ - ONLY IF DATA EXISTS =====
     const faqData = document.getElementById('job-faq');
     if (faqData) {
         const faqItems = faqData.querySelectorAll('[data-q]');
@@ -137,16 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="faq-container">${faqHTML}</div>
             </div>`;
 
-            const lastSection = jobPage.querySelector('.content-section:last-of-type');
-            if (lastSection) {
-                lastSection.insertAdjacentHTML('afterend', fullFaqHTML);
+            const allSections = jobPage.querySelectorAll('.content-section');
+            if (allSections.length > 0) {
+                allSections[allSections.length - 1].insertAdjacentHTML('afterend', fullFaqHTML);
             } else {
                 jobPage.insertAdjacentHTML('beforeend', fullFaqHTML);
             }
         }
     }
 
-    // ===== 8. RELATED JOBS - ALWAYS AT END OF PAGE =====
+    // ===== 9. RELATED JOBS - ALWAYS WORKS =====
     const relatedJobs = [
         {title: 'Civil Court Ranchi Recruitment 2026', desc: '10th Pass | 25 Posts | Offline Form', url: 'https://missiongyanjobs.github.io/civil-court-ranchi-2026.html'},
         {title: 'BRO GREF Recruitment 2026', desc: '10th Pass | 411 Posts | Last Date: 12/08/2026', url: 'https://missiongyanjobs.github.io/bro-gref-2026.html'},
@@ -187,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     jobPage.insertAdjacentHTML('beforeend', relatedHTML);
 
-    // ===== 9. SHARE + BOOKMARK + TELEGRAM - ALWAYS AT VERY END =====
+    // ===== 10. SHARE + BOOKMARK + TELEGRAM - ALWAYS WORKS =====
     if(jobData.showShare) {
         let title = document.title.replace(/ \| Mission Gyan Jobs/gi, '');
         let url = window.location.href;
