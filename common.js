@@ -1,26 +1,25 @@
-// Mission Gyan Jobs - Common.js V6.0 PRO MAX FINAL
-// Rule: 100% English Only | Smart Back/Home | Home Page Safe | Online + Offline
+// Mission Gyan Jobs - Common.js V6.3 FINAL PRO MAX
+// Rule: 100% English Only | Home Clean | Left Side Back/Home | All Features Intact
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ===== 0. CHECK: VACANCY PAGE HAI YA NAHI =====
+    // ===== 0. CHECK: SIRF VACANCY PAGE PE HI VACANCY CODE CHALE =====
     const metaDiv = document.getElementById('job-meta');
-    const isVacancyPage =!!metaDiv; // True agar job-meta hai
+    const isVacancyPage =!!metaDiv;
 
-    const h1 = document.querySelector('h1');
-    if(!h1) return;
+    if (isVacancyPage) { // Sirf Vacancy page pe ye sab chale
 
-    // ===== 1. MAIN CONTAINER FINDER =====
-    const jobPage = document.getElementById('job-page') ||
-                    document.querySelector('.container') ||
-                    document.querySelector('main') ||
-                    document.querySelector('.main-content') ||
-                    document.body;
+        const h1 = document.querySelector('h1');
+        if(!h1) return;
 
-    // ===== 2. VACANCY CODE - SIRF VACANCY PAGE PE CHALE =====
-    if (isVacancyPage) {
+        // ===== 1. AUTO FIND MAIN CONTAINER =====
+        const jobPage = document.getElementById('job-page') ||
+                        document.querySelector('.container') ||
+                        document.querySelector('main') ||
+                        document.querySelector('.main-content') ||
+                        document.body;
 
-        // ===== 2.1 SMART DATA READER =====
+        // ===== 2. SMART DATA READER =====
         const jobData = {
             qualification: metaDiv?.dataset.qualification || 'Not Specified',
             formMode: metaDiv?.dataset.formMode || 'Check Notification',
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showShare: metaDiv?.dataset.showShare!== 'false'
         };
 
-        // ===== 2.2 COUNTDOWN =====
+        // ===== 3. COUNTDOWN =====
         function getCountdown(lastDateStr) {
             if (!lastDateStr) return '';
             const parts = lastDateStr.split('/');
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const countdownHTML = getCountdown(jobData.lastDate);
 
-        // ===== 2.3 DYNAMIC TAGS =====
+        // ===== 4. DYNAMIC TAGS =====
         let tagsArray = [];
         if(jobData.qualification && jobData.qualification!== 'Not Specified') tagsArray.push({text: jobData.qualification, color: '#4caf50'});
         if(jobData.formMode && jobData.formMode!== 'Check Notification') tagsArray.push({text: jobData.formMode, color: '#2196f3'});
@@ -65,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function() {
             h1.insertAdjacentHTML('afterend', tagsHTML);
         }
 
-        // ===== 2.4 LAST UPDATED =====
+        // ===== 5. LAST UPDATED =====
         if(jobData.showUpdated) {
             let today = new Date().toLocaleDateString('en-GB', {day:'2-digit',month:'long',year:'numeric'});
             let updatedHTML = `<p id="mgj-updated" style="font-size:13px;color:#1b5e20;margin:8px 0 15px 0;background:#e8f5e9;padding:8px 14px;border-left:4px solid #4caf50;border-radius:4px;display:inline-block;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.05);">✅ Last Updated: ${today}</p>`;
             h1.insertAdjacentHTML('afterend', updatedHTML);
         }
 
-        // ===== 2.5 INFO LINE =====
+        // ===== 6. INFO LINE =====
         let infoParts = [];
         if(jobData.post) infoParts.push(jobData.post);
         if(jobData.total) infoParts.push(`Total ${jobData.total} Posts`);
@@ -83,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             h1.insertAdjacentHTML('afterend', infoLine);
         }
 
-        // ===== 2.6 AUTO SYLLABUS =====
+        // ===== 7. AUTO SYLLABUS =====
         const syllabusData = document.getElementById('job-syllabus');
         if (syllabusData) {
             const subjects = [];
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // ===== 2.7 AUTO FAQ =====
+        // ===== 8. AUTO FAQ =====
         const faqData = document.getElementById('job-faq');
         if (faqData) {
             const faqItems = faqData.querySelectorAll('[data-q]');
@@ -155,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // ===== 2.8 RELATED JOBS =====
+        // ===== 9. RELATED JOBS =====
         const relatedJobs = [
             {title: 'Civil Court Ranchi Recruitment 2026', desc: '10th Pass | 25 Posts | Offline Form', url: 'https://missiongyanjobs.github.io/civil-court-ranchi-2026.html'},
             {title: 'BRO GREF Recruitment 2026', desc: '10th Pass | 411 Posts | Last Date: 12/08/2026', url: 'https://missiongyanjobs.github.io/bro-gref-2026.html'},
@@ -196,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         jobPage.insertAdjacentHTML('beforeend', relatedHTML);
 
-        // ===== 2.9 SHARE BOX =====
+        // ===== 10. SHARE BOX =====
         if(jobData.showShare) {
             let title = document.title.replace(/ \| Mission Gyan Jobs/gi, '');
             let url = window.location.href;
@@ -231,27 +230,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// ===== SMART BACK/HOME BUTTON - PRO MAX LOGIC =====
+// ===== SMART BACK/HOME BUTTON - FINAL LOGIC =====
 (function(){
     const header = document.querySelector('.top-bar');
     if(!header) return;
 
-    // CHECK: KYA YE VACANCY PAGE HAI?
     const isVacancyPage = document.getElementById('job-meta');
+    const isHomePage = window.location.pathname === '/' ||
+                       window.location.pathname === '/index.html' ||
+                       window.location.href === 'https://missiongyanjobs.github.io/' ||
+                       window.location.href === 'https://missiongyanjobs.github.io/index.html';
+
+    // HOME PAGE PE BUTTON HI NAHI DIKHEGA
+    if (isHomePage) return;
 
     var btn = document.createElement('a');
     btn.id = 'mgj-home-btn';
     btn.href = '#';
 
     if (isVacancyPage) {
-        // VACANCY PAGE PE "BACK" DIKHEGA - CARD SECTION PE WAPAS JAYEGA
+        // VACANCY PAGE PE "BACK" DIKHEGA LEFT ME
         btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg><span>Back</span>`;
         btn.onclick = function(e) {
             e.preventDefault();
             window.history.back();
         };
     } else {
-        // HOME PAGE PE "HOME" DIKHEGA
+        // SECTION PAGES PE "HOME" DIKHEGA LEFT ME - Offline Forms etc
         btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 22"></polyline></svg><span>Home</span>`;
         btn.onclick = function(e) {
             e.preventDefault();
@@ -259,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // CSS - LOGO SE DOOR + MOBILE PERFECT
+    // CSS - LEFT SIDE ME LOGO SE DOOR
     var css = `#mgj-home-btn{position:absolute;left:15px;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0d47a1!important;padding:8px 14px;border-radius:8px;text-decoration:none!important;font-weight:600;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:0.2s;z-index:999} #mgj-home-btn:hover{background:#0d47a1;color:#fff!important} @media(max-width:768px){#mgj-home-btn{left:10px;top:15px;transform:none;padding:6px 10px} #mgj-home-btn span{display:none}.top-bar{padding-top:55px!important}}`;
 
     var style = document.createElement('style');
