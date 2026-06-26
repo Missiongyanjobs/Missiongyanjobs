@@ -1,7 +1,50 @@
-// Mission Gyan Jobs - Common.js V6.3 FINAL PRO MAX
+// Mission Gyan Jobs - Common.js V6.4 GA4 INTEGRATED
 // Rule: 100% English Only | Home Clean | Left Side Back/Home | All Features Intact
 
+// ===== GOOGLE ANALYTICS 4 - START =====
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8GKG4REDX6');
+
+// GA4 Script Auto Load
+(function() {
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8GKG4REDX6';
+  document.head.appendChild(gaScript);
+})();
+
+// Custom Event Tracking Functions
+function trackDownload(jobTitle, fileUrl) {
+  gtag('event', 'file_download', {
+    'event_category': 'Job PDF',
+    'event_label': jobTitle,
+    'file_url': fileUrl,
+    'value': 1
+  });
+}
+
+function trackOutboundClick(url) {
+  gtag('event', 'click', {
+    'event_category': 'Outbound Link',
+    'event_label': url,
+    'transport_type': 'beacon'
+  });
+}
+// ===== GOOGLE ANALYTICS 4 - END =====
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    // ===== AUTO OUTBOUND LINK TRACKING =====
+    document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+      if (!link.href.includes('missiongyanjobs.github.io')) {
+        link.addEventListener('click', function() {
+          trackOutboundClick(link.href);
+        });
+      }
+    });
 
     // ===== 0. CHECK: SIRF VACANCY PAGE PE HI VACANCY CODE CHALE =====
     const metaDiv = document.getElementById('job-meta');
