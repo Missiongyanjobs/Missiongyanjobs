@@ -1,4 +1,4 @@
-// Mission Gyan Jobs - Common.js V6.5 FINAL FIXED
+// Mission Gyan Jobs - Common.js V6.5 FINAL
 // Rule: 100% English Only | Home Clean | Left Side Back/Home | All Features Intact
 
 // ===== GOOGLE ANALYTICS 4 - START =====
@@ -129,12 +129,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.top-bar');
     if(header) {
         const isVacancyPage = document.getElementById('job-meta');
-        const isHomePage = window.location.pathname === '/' ||
-                           window.location.pathname === '/index.html' ||
-                           window.location.pathname === '' ||
-                           window.location.href === 'https://missiongyanjobs.github.io/' ||
-                           window.location.href === 'https://missiongyanjobs.github.io/index.html' ||
-                           window.location.href.endsWith('missiongyanjobs.github.io/');
+        const path = window.location.pathname;
+        const isHomePage = path === '/' ||
+                           path === '/index.html' ||
+                           path === '' ||
+                           path.endsWith('missiongyanjobs.github.io/') ||
+                           path.endsWith('missiongyanjobs.github.io');
 
         // HOME PAGE PE BUTTON HI NAHI DIKHEGA
         if (!isHomePage) {
