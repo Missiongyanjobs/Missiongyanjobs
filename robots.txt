@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://missiongyanjobs.github.io/sitemap.xml
-Sitemap: https://missiongyanjobs.github.io/offline-sitemap.xml
+Sitemap: https://missiongyanjobs.github.io/online-sitemap.txt
+Sitemap: https://missiongyanjobs.github.io/offline-sitemap.txt
