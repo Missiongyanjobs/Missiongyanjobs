@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://missiongyanjobs.github.io/sitemap.html
+Sitemap: https://missiongyanjobs.github.io/sitemap.xml
