@@ -13,9 +13,19 @@
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f6f9; color: #333; line-height: 1.7; }
+        
+        /* ✅ PRO MAX FIX: TOP WHITE PATTI KHATAM */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #b30000 !important; /* Header wala Red */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333; 
+            line-height: 1.7; 
+        }
+        
         .container { max-width: 1100px; margin: 20px auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
-        .top-bar { background: linear-gradient(135deg, #b30000, #8b0000); color: white; padding: 20px; text-align: center; position: relative; }
+        .top-bar { background: linear-gradient(135deg, #b30000, #8b0000); color: white; padding: 20px; text-align: center; position: relative; margin-top: 0 !important; }
         .top-bar h1 { font-size: 26px; margin-bottom: 5px; }
         .top-bar p { font-size: 14px; opacity: 0.9; }
         .alert-box { background: #fee2e2; border-left: 5px solid #dc2626; padding: 12px; margin: 20px; border-radius: 4px; font-weight: 700; color: #991b1b; text-align: center; }
@@ -175,6 +185,65 @@
             <a href="https://onlinesbi.sbi.bank.in/sbicollect/icollecthome.htm" class="btn btn-warning" target="_blank">💳 Pay Fee Online</a>
             <a href="https://bro.gov.in/" class="btn btn-info" target="_blank">🌐 Official Website</a>
         </div>
+
+        <!-- ✅ FINAL RELATED JOBS + SHARE SECTION - TERI DI HUI 4 VACANCY -->
+        <div style="background: #f8fafc; padding: 20px 15px; margin-top: 30px;">
+            <h3 style="background: #6d28d9; color: white; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; text-align: center;">🔥 Related Jobs</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                
+                <a href="https://missiongyanjobs.github.io/civil-court-ranchi-2026.html" style="text-decoration: none;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">Civil Court Ranchi 2026</h4>
+                        <p style="color: #64748b; margin: 0; font-size: 14px;">10th Pass | 22 Posts | Last Date: 20/07/2026</p>
+                    </div>
+                </a>
+                
+                <a href="https://missiongyanjobs.github.io/bro-gref-2026.html" style="text-decoration: none;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">BRO GREF 2026</h4>
+                        <p style="color: #64748b; margin: 0; font-size: 14px;">10th/12th/ITI | 899 Posts | Last Date: 04/07/2026</p>
+                    </div>
+                </a>
+                
+                <a href="https://missiongyanjobs.github.io/income-tax-odisha-sports-2026.html" style="text-decoration: none;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">Income Tax Odisha Sports</h4>
+                        <p style="color: #64748b; margin: 0; font-size: 14px;">Sports Quota | Multiple Posts | Check Details</p>
+                    </div>
+                </a>
+                
+                <a href="https://missiongyanjobs.github.io/iaf-groupc-bangalore-2026.html" style="text-decoration: none;">
+                    <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">IAF Group C Bangalore</h4>
+                        <p style="color: #64748b; margin: 0; font-size: 14px;">10th/12th Pass | Air Force Jobs | Apply Now</p>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+        <div style="background: white; padding: 25px 15px; text-align: center; margin: 20px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <h3 style="margin: 0 0 20px 0; color: #1f2937;">📢 Share This Vacancy</h3>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px;">
+                
+                <a id="whatsapp-share" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600;">WhatsApp</a>
+                
+                <a id="telegram-share" target="_blank" rel="noopener noreferrer" style="background: #0088cc; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600;">Telegram</a>
+                
+                <button onclick="navigator.clipboard.writeText(window.location.href); this.innerText='✅ Copied!'; setTimeout(()=>{this.innerText='📋 Copy Link'}, 2000);" style="background: #1f2937; color: white; padding: 10px 20px; border-radius: 25px; border: none; font-weight: 600; cursor: pointer;">📋 Copy Link</button>
+                
+            </div>
+            <a href="https://t.me/missiongyanjobs" target="_blank" rel="noopener noreferrer" style="background: #0ea5e9; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🚀 Join Telegram for Daily Updates</a>
+        </div>
+
+        <script>
+            // Share link har page pe auto set ho jayega
+            let pageUrl = encodeURIComponent(window.location.href);
+            let pageTitle = encodeURIComponent(document.title);
+            document.getElementById('whatsapp-share').href = `https://api.whatsapp.com/send?text=*${pageTitle}* - Check Details: ${pageUrl}`;
+            document.getElementById('telegram-share').href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+        </script>
+        <!-- ✅ RELATED JOBS + SHARE SECTION END -->
 
         <div class="footer-note">
             Mission Gyan Jobs | For Educational Purpose Only
