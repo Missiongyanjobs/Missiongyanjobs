@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -529,7 +529,7 @@
         <a href="https://ihmlucknow.com/" class="btn btn-info" target="_blank" rel="noopener">🌐 Official Website</a>
     </div>
 
-       <!-- ===== QR MODAL ===== -->
+        <!-- ===== QR MODAL ===== -->
     <div id="qrModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
         <div class="modal-content">
             <span class="close" onclick="closeQRModal()" aria-label="Close modal">&times;</span>
@@ -587,11 +587,11 @@
 <!-- /container -->
 
 <!-- ============================================================ -->
-<!-- ✅ SINGLE CLEAN SCRIPT BLOCK – all functions once, no duplicates -->
+<!-- ✅ SINGLE CLEAN SCRIPT BLOCK – सारा JavaScript यहाँ एक बार ही लिखा गया है, कोई डुप्लिकेट नहीं -->
 <!-- ============================================================ -->
 <script>
     /**
-     * Open the QR payment modal
+     * QR मोडल खोलने के लिए
      */
     function openQRModal() {
         var modal = document.getElementById('qrModal');
@@ -599,7 +599,7 @@
     }
 
     /**
-     * Close the QR payment modal
+     * QR मोडल बंद करने के लिए
      */
     function closeQRModal() {
         var modal = document.getElementById('qrModal');
@@ -607,7 +607,7 @@
     }
 
     /**
-     * Click outside modal → close it
+     * मोडल के बाहर क्लिक करने पर बंद करें
      */
     window.onclick = function(event) {
         var modal = document.getElementById('qrModal');
@@ -617,7 +617,7 @@
     };
 
     /**
-     * DOM ready – set up share links + copy button with fallback
+     * DOM लोड होने पर शेयर लिंक सेट करें और कॉपी बटन को हैंडल करें
      */
     document.addEventListener('DOMContentLoaded', function() {
         var pageUrl = encodeURIComponent(window.location.href);
@@ -635,7 +635,7 @@
             tgBtn.href = 'https://t.me/share/url?url=' + pageUrl + '&text=' + pageTitle;
         }
 
-        // Copy link button with modern + fallback support
+        // Copy link button with fallback
         var copyBtn = document.getElementById('copyLinkBtn');
         if (copyBtn) {
             copyBtn.addEventListener('click', function() {
@@ -661,7 +661,7 @@
     });
 
     /**
-     * Fallback copy using a temporary input element
+     * पुराने ब्राउज़र के लिए कॉपी करने का फॉलबैक तरीका
      */
     function fallbackCopy(text, btn, originalText) {
         var input = document.createElement('input');
@@ -689,4 +689,3 @@
 
 </body>
 </html>
-```
