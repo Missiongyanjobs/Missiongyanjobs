@@ -138,9 +138,7 @@
                 <tr><td><b>Office Supdt</b></td><td>Officer holding analogous post in any IHM set up by Ministry of Tourism</td></tr>
                 <tr><td><b>Maintenance Foreman</b></td><td>Practical Exp in Electrical/Maintenance + Teaching Exp in Civil/Electrical Engg Preferable</td></tr>
             </table>
-        </div>
-
-        <div class="section green-section">
+        </div>        <div class="section green-section">
             <div class="section-header green">🎯 Selection Process</div>
             <table>
                 <tr><td><span class="highlight">HOD</span></td><td>Personal Interview</td></tr>
@@ -253,25 +251,17 @@
             document.getElementById('qrModal').style.display = 'none';
         }
         window.onclick = function(event) {
-<script>
-    function openQRModal() {
-        document.getElementById('qrModal').style.display = 'block';
-    }
-    function closeQRModal() {
-        document.getElementById('qrModal').style.display = 'none';
-    }
-    window.onclick = function(event) {
-        var modal = document.getElementById('qrModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
+            var modal = document.getElementById('qrModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-        const pageUrl = encodeURIComponent(window.location.href);
-        const pageTitle = encodeURIComponent(document.title);
-        document.getElementById('whatsapp-share').href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
-        document.getElementById('telegram-share').href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
-    });
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageUrl = encodeURIComponent(window.location.href);
+            const pageTitle = encodeURIComponent(document.title);
+            document.getElementById('whatsapp-share').href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+            document.getElementById('telegram-share').href = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+        });
+    </script>
 </body>
 </html>
