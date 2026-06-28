@@ -253,4 +253,3 @@
             document.getElementById('qrModal').style.display = 'none';
         }
         window.onclick = function(event) {
- 
