@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offline Forms 2026 - Direct PDF Download | Mission Gyan Jobs</title>
-    <meta name="description" content="All Government Offline Forms 2026 PDF Download. Civil Court Ranchi, BRO GREF, Income Tax Sports, IAF Bangalore Offline Forms. Direct Download Links.">
-    <meta name="keywords" content="offline forms 2026, civil court ranchi form, bro gref offline form, income tax sports quota, iaf group c bangalore, government offline jobs">
+    <meta name="description" content="All Government Offline Forms 2026 PDF Download. IHM Lucknow, Civil Court Ranchi, BRO GREF, Income Tax Sports, IAF Bangalore Offline Forms. Direct Download Links.">
+    <meta name="keywords" content="offline forms 2026, ihm lucknow form, civil court ranchi form, bro gref offline form, income tax sports quota, iaf group c bangalore, government offline jobs">
     <link rel="icon" type="image/png" href="logo.png">
+    <script src="common.js"></script>
 
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
@@ -39,10 +40,10 @@
        
        /* FORM CARDS */
        .forms-grid {display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;}
-       .form-card {background: #fff; border: 2px solid #e5e7eb; border-radius: 8px; padding: 20px; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+       .form-card {background: #fff; border: 2px solid #e5e7eb; border-radius: 8px; padding: 20px; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative;}
        .form-card:hover {transform: translateY(-5px); border-color: #B91C1C; box-shadow: 0 8px 25px rgba(185,28,28,0.15);}
-       .form-title {font-size: 18px; font-weight: 800; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;}
-       .new-badge {background: linear-gradient(45deg, #FF0000, #dc2626); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: 800; animation: blink 1.5s infinite;}
+       .form-title {font-size: 18px; font-weight: 800; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; padding-right: 50px;}
+       .new-badge {background: linear-gradient(45deg, #FF0000, #dc2626); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: 800; animation: blink 1.5s infinite; position: absolute; top: 20px; right: 20px;}
         @keyframes blink {0%, 50% {opacity: 1;} 51%, 100% {opacity: 0.4;}}
        .form-info {font-size: 14px; color: #475569; margin: 8px 0; font-weight: 600;}
        .form-info span {color: #000; font-weight: 700;}
@@ -80,6 +81,7 @@
                 <h1>MISSION GYAN JOBS</h1>
                 <p>Offline Forms 2026 - Direct PDF Download</p>
             </div>
+        </div>
         <a href="index.html" class="home-btn">🏠 Home</a>
     </header>
 
@@ -89,14 +91,14 @@
             <h2>📝 Offline Forms 2026 - Direct PDF Download</h2>
             <div class="stats">
                 <div class="stat-box">
-                    <div class="number">4</div>
+                    <div class="number">5</div>
                     <div class="label">Total Forms</div>
                 </div>
                 <div class="stat-box">
                     <div class="number">Updated</div>
                     <div class="label">5 mins ago</div>
                 </div>
-            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search: Court / BRO / Income Tax / IAF / Police...">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search: Court / BRO / Income Tax / IAF / IHM / Police...">
         </div>
 
         <!-- TABS -->
@@ -109,6 +111,20 @@
 
         <!-- FORMS GRID -->
         <div class="forms-grid" id="formsGrid">
+            <!-- IHM LUCKNOW FORM - NEW ADDED -->
+            <div class="form-card" data-category="upsc" style="border-color: #b30000;">
+                <div class="form-title" style="color: #b30000;">
+                    IHM Lucknow Recruitment 2026 <span class="new-badge">New</span>
+                </div>
+                <div class="form-info">📅 Last Date: <span>31 July 2026</span></div>
+                <div class="form-info">📍 Posts: <span>HOD, Lecturer, LDC - 12 Posts</span></div>
+                <div class="form-info">📄 Qualification: <span>12th/Graduate/PG</span></div>
+                <div class="btn-group">
+                    <button class="btn" style="background: #d32f2f;" onclick="showLeadForm('ihm')">💰 ₹10 PDF</button>
+                    <a href="ihm-lucknow-recruitment-2026.html" class="btn btn-details">📋 Details</a>
+                </div>
+            </div>
+
             <!-- Civil Court Ranchi Form -->
             <div class="form-card" data-category="court">
                 <div class="form-title">
@@ -218,7 +234,10 @@
         let currentFormName = '';
         
         function showLeadForm(formType) {
-          if(formType === 'ranchi') {
+          if(formType === 'ihm') {
+            currentPdfUrl = 'https://ihmlucknow.com/wp-content/uploads/2026/06/Application-form-for-Adv-no.-IHMLKO01-1.pdf';
+            currentFormName = 'IHM Lucknow';
+          } else if(formType === 'ranchi') {
             currentPdfUrl = 'https://naukarinew.in/wp-content/uploads/2026/06/Civil-Court-Ranchi-Form-2026-naukarinew.in_.pdf';
             currentFormName = 'Civil Court Ranchi';
           } else if(formType === 'gref') {
@@ -243,11 +262,9 @@
             let mobile = document.getElementById('leadMobile').value;
             let email = document.getElementById('leadEmail').value;
             if(name && mobile && email) {
-                // Console me save - baad me Google Sheet se connect kar denge
                 console.log('Lead:', {name: name, mobile: mobile, email: email, form: currentFormName});
                 window.open(currentPdfUrl, '_blank');
                 closeLeadForm();
-                // Reset form
                 document.getElementById('leadName').value = '';
                 document.getElementById('leadMobile').value = '';
                 document.getElementById('leadEmail').value = '';
