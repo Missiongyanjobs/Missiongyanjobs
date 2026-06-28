@@ -13,17 +13,14 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        /* ✅ PRO MAX FIX: TOP WHITE PATTI KHATAM - RED HEADER */
         html, body {
             margin: 0!important;
             padding: 0!important;
-            background: #b30000!important; /* RED HEADER */
+            background: #b30000!important;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
             line-height: 1.7;
         }
-
         .container { max-width: 1100px; margin: 20px auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
         .top-bar { background: linear-gradient(135deg, #b30000, #d32f2f); color: white; padding: 20px; text-align: center; position: relative; margin-top: 0!important; }
         .top-bar h1 { font-size: 26px; margin-bottom: 5px; }
@@ -62,14 +59,11 @@
         .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         .note { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 12px; margin: 15px 20px; font-size: 14px; }
         .footer-note { text-align: center; padding: 15px; font-size: 13px; color: #666; background: #f8f9fa; }
-        
-        /* QR POPUP CSS */
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
         .modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 90%; max-width: 400px; border-radius: 10px; text-align: center; position: relative; }
         .close { color: #aaa; position: absolute; right: 15px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer; }
         .close:hover { color: #000; }
         .qr-img { width: 250px; height: 250px; margin: 15px auto; border: 2px solid #ddd; border-radius: 8px; }
-        
         @media (max-width: 768px) {
             .container { margin: 10px; border-radius: 0; }
             .top-bar h1 { font-size: 20px; }
@@ -187,21 +181,17 @@
         </div>
 
         <div class="btn-group">
-            <!-- ✅ PAID PDF BUTTON -->
             <button class="btn btn-primary" onclick="openQRModal()">💰 Pay ₹10 & Download Form PDF</button>
-            
             <a href="https://www.vacancyform.com/img/images/upload/6658166340.pdf" class="btn btn-success" target="_blank">📥 Download Notification PDF</a>
-            
             <a href="https://ihmlucknow.com/" class="btn btn-info" target="_blank">🌐 Official Website</a>
         </div>
 
-        <!-- QR MODAL POPUP -->
         <div id="qrModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeQRModal()">&times;</span>
                 <h2 style="color: #b30000; margin-bottom: 10px;">Pay ₹10 to Download Form</h2>
                 <p style="margin-bottom: 10px;"><b>Step 1:</b> Scan QR & Pay ₹10</p>
-                <img src="attachment://36945772455038703" alt="PhonePe QR Code" class="qr-img">
+                <img src="phonepe-qr.jpg" alt="PhonePe QR Code" class="qr-img">
                 <p style="font-size: 14px; margin: 10px 0;"><b>UPI ID:</b> 6376828045-2.wallet@phonepe</p>
                 <p style="margin-bottom: 10px;"><b>Step 2:</b> Payment Screenshot bheje</p>
                 <a href="https://t.me/Missiongyanexams1" target="_blank" class="btn btn-success" style="margin: 10px 0;">📱 Send Screenshot on Telegram</a>
@@ -210,51 +200,57 @@
             </div>
         </div>
 
-        <!-- ✅ FINAL RELATED JOBS + SHARE SECTION -->
         <div style="background: #f8fafc; padding: 20px 15px; margin-top: 30px;">
             <h3 style="background: #6d28d9; color: white; padding: 12px; border-radius: 8px; margin: 0 0 15px 0; text-align: center;">🔥 Related Jobs</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-
-                <a href="https://missiongyanjobs.github.io/civil-court-ranchi-2026.html" style="text-decoration: none;">
+                <a href="civil-court-ranchi-2026.html" style="text-decoration: none;">
                     <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">Civil Court Ranchi 2026</h4>
                         <p style="color: #64748b; margin: 0; font-size: 14px;">10th Pass | 22 Posts | Last Date: 20/07/2026</p>
                     </div>
                 </a>
-
-                <a href="https://missiongyanjobs.github.io/bro-gref-2026.html" style="text-decoration: none;">
+                <a href="bro-gref-2026.html" style="text-decoration: none;">
                     <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">BRO GREF 2026</h4>
                         <p style="color: #64748b; margin: 0; font-size: 14px;">10th/12th/ITI | 899 Posts | Last Date: 04/07/2026</p>
                     </div>
                 </a>
-
-                <a href="https://missiongyanjobs.github.io/income-tax-odisha-sports-2026.html" style="text-decoration: none;">
+                <a href="income-tax-odisha-sports-2026.html" style="text-decoration: none;">
                     <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">Income Tax Odisha Sports</h4>
                         <p style="color: #64748b; margin: 0; font-size: 14px;">Sports Quota | 12 Posts | Last Date: 31/07/2026</p>
                     </div>
                 </a>
-
-                <a href="https://missiongyanjobs.github.io/iaf-groupc-bangalore-2026.html" style="text-decoration: none;">
+                <a href="iaf-groupc-bangalore-2026.html" style="text-decoration: none;">
                     <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
                         <h4 style="color: #6d28d9; margin: 0 0 5px 0; font-size: 16px;">IAF Group C Bangalore</h4>
                         <p style="color: #64748b; margin: 0; font-size: 14px;">10th Pass | 06 MTS Posts | Last Date: 27/07/2026</p>
                     </div>
                 </a>
-
             </div>
         </div>
 
         <div style="background: white; padding: 25px 15px; text-align: center; margin: 20px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
             <h3 style="margin: 0 0 20px 0; color: #1f2937;">📢 Share This Vacancy</h3>
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px;">
-
                 <a id="whatsapp-share" target="_blank" rel="noopener noreferrer" style="background: #25D366; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600;">WhatsApp</a>
-
                 <a id="telegram-share" target="_blank" rel="noopener noreferrer" style="background: #0088cc; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600;">Telegram</a>
-
                 <button onclick="navigator.clipboard.writeText(window.location.href); this.innerText='✅ Copied!'; setTimeout(()=>{this.innerText='📋 Copy Link'}, 2000);" style="background: #1f2937; color: white; padding: 10px 20px; border-radius: 25px; border: none; font-weight: 600; cursor: pointer;">📋 Copy Link</button>
-
             </div>
-            <a href="https://t.me/Missiongyanexams1" target="_blank" rel="noopener noreferrer" style="background: #0ea5e9; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🚀 Join Telegram for D
+            <a href="https://t.me/Missiongyanexams1" target="_blank" rel="noopener noreferrer" style="background: #0ea5e9; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🚀 Join Telegram for Daily Updates</a>
+        </div>
+
+        <div class="footer-note">
+            © 2026 Mission Gyan Jobs | All Rights Reserved
+        </div>
+    </div>
+
+    <script>
+        function openQRModal() {
+            document.getElementById('qrModal').style.display = 'block';
+        }
+        function closeQRModal() {
+            document.getElementById('qrModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+  
